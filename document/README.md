@@ -30,7 +30,7 @@
   学生模块：可以选课、查看课表、加入课程群组、获取各个课程老师发布的任务信息并在群组中与其他同学或者老师交流讨论。<br>
   附加功能：如果项目完成后时间有余，会增加更多实用的功能，比如：增加类似于QQ的私信聊天、添加表情、从网页再转移到移动app版等等。<br>
 ### 1.4 参考资料：
-  《构建之法》(第二版)，邹欣。<br>
+ 《构建之法》(第二版)，邹欣。<br>
   博客、文档。
 ## 2、总体描述：
 ### 2.1 项目背景：
@@ -67,11 +67,11 @@
 ## 4、界面原型设计：
   本页面只是用方框代替，具体页面展示还在设计中。
 <br>
-![image](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/1.png)
+![image text](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/1.png)
 <br>
-![image](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/2.png)
+![image text](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/2.png)
 <br>
-![image](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/3.png)
+![image text](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/3.png)
 ## 5、系统功能描述验收标准：
 ### 5.1 质量要求：
 用户标准：要界面简洁、易操作，系统稳定安全，满足基本需求。<br>
