@@ -67,11 +67,11 @@
 ## 4、界面原型设计：
   本页面只是用方框代替，具体页面展示还在设计中。
 <br>
-![image text](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/1.png)
+![login](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/1.png)
 <br>
-![image text](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/2.png)
+![teacher](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/2.png)
 <br>
-![image text](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/3.png)
+![student](https://github.com/WHUSE2017/Java-Team/tree/master/document/image/3.png)
 ## 5、系统功能描述验收标准：
 ### 5.1 质量要求：
 用户标准：要界面简洁、易操作，系统稳定安全，满足基本需求。<br>
