@@ -21,7 +21,6 @@ import java.util.List;
 
 /**
  * 初始化监听器
- * Created by zchuanzhao on 16/9/26.
  */
 public class InitInterceptor implements HandlerInterceptor {
 

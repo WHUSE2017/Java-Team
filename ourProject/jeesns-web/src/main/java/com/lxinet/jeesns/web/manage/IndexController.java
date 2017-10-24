@@ -19,9 +19,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * Created by zchuanzhao on 16/9/26.
- */
+
 @Controller("manageIndexController")
 @RequestMapping("/${managePath}")
 @Before(AdminLoginInterceptor.class)

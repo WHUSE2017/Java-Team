@@ -25,9 +25,6 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 16/12/26.
- */
 @Controller("frontGroupController")
 @RequestMapping("/group")
 public class GroupController extends BaseController {

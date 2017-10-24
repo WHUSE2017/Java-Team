@@ -22,9 +22,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 2016/11/22.
- */
 @Controller("memberIndexController")
 @RequestMapping("/member")
 public class MemberController extends BaseController {

@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
-/**
- * Created by zchuanzhao on 2016/11/22.
- */
+
 @Controller("manageMemberController")
 @RequestMapping("/")
 @Before(AdminLoginInterceptor.class)

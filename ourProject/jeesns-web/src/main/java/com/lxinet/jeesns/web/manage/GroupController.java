@@ -13,9 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
-/**
- * Created by zchuanzhao on 16/12/23.
- */
+
 @Controller("manageGroupController")
 @RequestMapping("/")
 @Before(AdminLoginInterceptor.class)

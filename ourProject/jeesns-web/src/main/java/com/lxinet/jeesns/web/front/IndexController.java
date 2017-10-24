@@ -30,9 +30,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2016/11/25.
- */
 @Controller("indexController")
 @RequestMapping("/")
 public class IndexController extends BaseController{

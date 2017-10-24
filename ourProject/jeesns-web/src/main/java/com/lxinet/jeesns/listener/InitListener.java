@@ -10,9 +10,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/5/25.
- */
 public class InitListener implements ServletContextListener {
 
     public InitListener() {

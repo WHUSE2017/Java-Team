@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 
-/**
- * Created by zchuanzhao on 2017/4/7.
- */
 @Controller("scoreDetailFrontController")
 @RequestMapping("/member/scoreDetail")
 @Before(UserLoginInterceptor.class)

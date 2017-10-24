@@ -24,10 +24,6 @@ import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * 文件上传
- * Created by zchuanzhao on 16/9/29.
- */
 @Controller
 @RequestMapping("/")
 public class UploadController extends BaseController {

@@ -17,7 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * ckeditor上传文件
- * Created by zchuanzhao on 2017/09/06.
  */
 @Controller
 @RequestMapping("/ckeditorUpload")

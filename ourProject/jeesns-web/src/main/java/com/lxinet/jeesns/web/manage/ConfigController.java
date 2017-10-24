@@ -18,9 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 2017/1/3.
- */
+
 @Controller
 @RequestMapping("/${managePath}/system/config/")
 @Before(AdminLoginInterceptor.class)

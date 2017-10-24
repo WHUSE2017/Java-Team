@@ -18,7 +18,6 @@ import java.util.List;
 
 /**
  * Controller基类
- * Created by zchuanzhao on 2016/11/26.
  */
 public class BaseController {
     @Resource

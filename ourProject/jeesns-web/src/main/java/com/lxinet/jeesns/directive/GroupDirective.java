@@ -10,9 +10,6 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/5/18.
- */
 @Component
 public class GroupDirective extends BaseDirective {
     @Resource

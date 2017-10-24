@@ -9,9 +9,6 @@ import com.lxinet.jeesns.common.utils.ConfigUtil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Created by zchuanzhao on 2016/11/25.
- */
 public class UserLoginInterceptor implements JeesnsInterceptor {
 
     @Override

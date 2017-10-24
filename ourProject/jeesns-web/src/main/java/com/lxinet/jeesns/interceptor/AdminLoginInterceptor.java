@@ -8,9 +8,6 @@ import com.lxinet.jeesns.model.member.Member;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Created by zchuanzhao on 16/11/25.
- */
 public class AdminLoginInterceptor implements JeesnsInterceptor {
 
     @Override

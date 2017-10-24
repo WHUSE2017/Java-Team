@@ -84,9 +84,7 @@
                             </dd>
                         </dl>
                     </header>
-                    <@ads id=2>
-                        <#include "/tp/ad.ftl"/>
-                    </@ads>
+ 
                     <section class="content">
                     ${groupTopic.content}
                     </section>
@@ -102,9 +100,7 @@
                     </#if>
                     </div>
                 </article>
-                <@ads id=2>
-                    <#include "/tp/ad.ftl"/>
-                </@ads>
+ 
                 <div class="comments panel">
                     <div class="panel-heading">帖子评论</div>
                     <header>
@@ -192,41 +188,8 @@
                     </div>
                 </div>
             </div>
-            <@ads id=1>
-                <#include "/tp/ad.ftl"/>
-            </@ads>
-            <div class="col-md-4">
-                <div class="panel">
-                    <div class="panel-heading">
-                        最新文章
-                    </div>
-                    <div class="panel-body article-hot-list">
-                        <ul>
-                        <@cms_article_list cid=0 sort='id' num=10; article>
-                            <#list articleList as article>
-                                <li><i class="icon-hand-right main-text-color"></i> <a
-                                        href="${basePath}/article/detail/${article.id}">${article.title}</a></li>
-                            </#list>
-                        </@cms_article_list>
-                        </ul>
-                    </div>
-                </div>
-                <div class="panel">
-                    <div class="panel-heading">
-                        热门文章
-                    </div>
-                    <div class="panel-body article-hot-list">
-                        <ul>
-                        <@cms_article_list cid=0 sort='view-count' num=10 day=30; article>
-                            <#list articleList as article>
-                                <li><i class="icon-hand-right main-text-color"></i> <a
-                                        href="${basePath}/article/detail/${article.id}">${article.title}</a></li>
-                            </#list>
-                        </@cms_article_list>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        
+
         </div>
     </div>
 
