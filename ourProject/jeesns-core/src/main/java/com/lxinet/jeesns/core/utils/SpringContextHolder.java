@@ -5,7 +5,6 @@ import org.springframework.context.ApplicationContextAware;
 
 /**
  * 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候中取出ApplicaitonContext.
- * Created by zchuanzhao on 2016/9/26.
  */
 public class SpringContextHolder implements ApplicationContextAware {
 	private static ApplicationContext applicationContext;

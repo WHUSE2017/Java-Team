@@ -1,8 +1,6 @@
 package com.lxinet.jeesns.core.utils;
 
-/**
- * Created by zchuanzhao on 2017/3/3.
- */
+
 public class RedirectUrlUtil {
 
     /**

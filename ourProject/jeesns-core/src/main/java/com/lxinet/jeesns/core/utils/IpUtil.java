@@ -6,9 +6,6 @@ import org.springframework.util.StringUtils;
 import javax.servlet.http.HttpServletRequest;
 
 
-/**
- * Created by zchuanzhao on 2016/11/26.
- */
 public class IpUtil {
 	/** 
      * 获取访问者IP 

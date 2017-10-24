@@ -9,9 +9,7 @@ import freemarker.template.TemplateModel;
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 2017/5/18.
- */
+
 public abstract class BaseDirective implements TemplateDirectiveModel {
 
     @Override

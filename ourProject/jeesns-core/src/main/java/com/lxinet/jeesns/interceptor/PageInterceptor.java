@@ -18,7 +18,6 @@ import java.util.Properties;
 
 /**
  * 分页拦截器
- * Created by zchuanzhao on 2016/10/14.
  */
 @Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class})})
 public class PageInterceptor implements Interceptor {

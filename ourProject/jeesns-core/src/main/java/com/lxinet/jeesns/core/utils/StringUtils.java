@@ -3,9 +3,7 @@ package com.lxinet.jeesns.core.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by zchuanzhao on 2016/10/16.
- */
+
 public class StringUtils {
 
     public static boolean isEmpty(String str){

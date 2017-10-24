@@ -4,9 +4,7 @@ package com.lxinet.jeesns.core.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by zchuanzhao on 2016/11/26.
- */
+
 public class HtmlUtil {
 	private static final String REGEX_SCRIPT = "<script[^>]*?>[\\s\\S]*?<\\/script>"; // 定义script的正则表达式
 	private static final String REGEX_STYLE = "<style[^>]*?>[\\s\\S]*?<\\/style>"; // 定义style的正则表达式

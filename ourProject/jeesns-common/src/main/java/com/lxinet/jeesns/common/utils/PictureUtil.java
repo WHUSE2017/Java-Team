@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/3/7.
- */
+
 public class PictureUtil {
     public static void delete(HttpServletRequest request, List<Picture> pictures){
         if (pictures != null){

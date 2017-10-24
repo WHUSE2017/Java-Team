@@ -1,8 +1,6 @@
 package com.lxinet.jeesns.common.utils;
 
-/**
- * Created by zchuanzhao on 2017/2/15.
- */
+
 public enum ActionLogType {
     TEXT(0),ARTICLE(1),WEIBO(2),GROUP_TOPIC(4);
     private Integer value;

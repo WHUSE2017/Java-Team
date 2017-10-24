@@ -1,8 +1,6 @@
 package com.lxinet.jeesns.common.utils;
 
-/**
- * Created by zchuanzhao on 2017/3/29.
- */
+
 public class ScoreRuleConsts {
 
     /**

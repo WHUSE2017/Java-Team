@@ -6,9 +6,7 @@ import com.lxinet.jeesns.model.member.Member;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by zchuanzhao on 16/9/29.
- */
+
 public class MemberUtil {
     public static Member getLoginMember(HttpServletRequest request){
         Member loginMember = (Member) request.getSession().getAttribute(Const.SESSION_MEMBER);

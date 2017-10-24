@@ -8,7 +8,6 @@ import java.io.IOException;
 
 /**
  * XSS攻击过滤器
- * Created by zchuanzhao on 2017/3/23.
  */
 public class XssFilter implements Filter {
     private FilterConfig filterConfig = null;

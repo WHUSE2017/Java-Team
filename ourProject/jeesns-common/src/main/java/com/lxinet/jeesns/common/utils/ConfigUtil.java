@@ -1,9 +1,6 @@
 package com.lxinet.jeesns.common.utils;
 
 
-/**
- * Created by zchuanzhao on 2017/1/5.
- */
 public class ConfigUtil {
     public static final String CMS_POST = "cms_post";
     public static final String CMS_POST_REVIEW = "cms_post_review";

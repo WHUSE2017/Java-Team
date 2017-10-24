@@ -3,9 +3,7 @@ package com.lxinet.jeesns.core.utils;
 
 import java.util.UUID;
 
-/**
- * Created by zchuanzhao on 2017/1/20.
- */
+
 public class RandomCodeUtil {
 
     /**

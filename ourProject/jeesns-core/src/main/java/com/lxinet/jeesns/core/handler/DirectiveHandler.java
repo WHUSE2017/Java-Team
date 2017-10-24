@@ -10,9 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 2017/5/18.
- */
+
 public class DirectiveHandler {
     public static final SimpleDateFormat FULL_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     public static final int FULL_DATE_LENGTH = 19;

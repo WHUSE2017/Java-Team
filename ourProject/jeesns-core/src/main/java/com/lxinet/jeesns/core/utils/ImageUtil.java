@@ -12,9 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/**
- * Created by zchuanzhao on 2017/3/7.
- */
+
 public class ImageUtil {
     private static String DEFAULT_PREVFIX = "thumb_";
     private static Boolean DEFAULT_FORCE = false;

@@ -1,8 +1,6 @@
 package com.lxinet.jeesns.common.utils;
 
-/**
- * Created by zchuanzhao on 2017/2/14.
- */
+
 public class ActionUtil {
     /**
      * 会员注册
