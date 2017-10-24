@@ -5,9 +5,6 @@ import com.lxinet.jeesns.core.model.Page;
 import com.lxinet.jeesns.model.member.MemberFans;
 
 
-/**
- * Created by zchuanzhao on 17/2/21.
- */
 public interface IMemberFansService {
 
     ResponseModel save(Integer whoFollowId, Integer followWhoId);

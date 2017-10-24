@@ -5,9 +5,7 @@ import com.lxinet.jeesns.model.system.Action;
 
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/2/14.
- */
+
 public interface IActionService {
 
     List<Action> list();

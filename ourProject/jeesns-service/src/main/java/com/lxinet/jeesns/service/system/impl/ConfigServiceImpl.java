@@ -12,9 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 16/9/27.
- */
+
 @Service("configService")
 public class ConfigServiceImpl implements IConfigService {
     @Resource

@@ -24,9 +24,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2016/12/26.
- */
 @Service("groupTopicService")
 public class GroupTopicServiceImpl implements IGroupTopicService {
     @Resource

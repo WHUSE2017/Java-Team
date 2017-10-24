@@ -8,9 +8,6 @@ import com.lxinet.jeesns.model.member.Member;
 import java.util.List;
 
 
-/**
- * Created by zchuanzhao on 16/12/23.
- */
 public interface IGroupService {
 
     Group findById(int id);

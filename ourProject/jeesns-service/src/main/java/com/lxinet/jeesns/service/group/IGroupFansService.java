@@ -7,9 +7,6 @@ import com.lxinet.jeesns.model.member.Member;
 import org.apache.ibatis.annotations.Param;
 
 
-/**
- * Created by zchuanzhao on 16/12/26.
- */
 public interface IGroupFansService {
 
     ResponseModel save(Member loginMember, Integer groupId);

@@ -6,9 +6,6 @@ import com.lxinet.jeesns.model.group.GroupTopicComment;
 import com.lxinet.jeesns.model.member.Member;
 
 
-/**
- * Created by zchuanzhao on 2016/12/27.
- */
 public interface IGroupTopicCommentService {
 
     GroupTopicComment findById(int id);

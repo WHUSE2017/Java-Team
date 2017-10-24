@@ -1,7 +1,6 @@
 package com.lxinet.jeesns.web.front;
 
 import com.lxinet.jeesns.model.common.Link;
-import com.lxinet.jeesns.service.cms.IArticleService;
 import com.lxinet.jeesns.service.common.IArchiveService;
 import com.lxinet.jeesns.common.utils.EmojiUtil;
 import com.lxinet.jeesns.common.utils.MemberUtil;
@@ -22,7 +21,6 @@ import com.lxinet.jeesns.service.member.IMemberService;
 import com.lxinet.jeesns.model.system.ActionLog;
 import com.lxinet.jeesns.service.system.IActionLogService;
 //import com.lxinet.jeesns.weibo.service.IWeiboService;
-import com.lxinet.jeesns.service.weibo.IWeiboService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,14 +31,11 @@ import java.util.List;
 @Controller("indexController")
 @RequestMapping("/")
 public class IndexController extends BaseController{
-    @Resource
-    private IArticleService articleService;
+
     @Resource
     private IGroupTopicService groupTopicService;
     @Resource
     private IGroupService groupService;
-    @Resource
-    private IWeiboService weiboService;
     @Resource
     private IMemberService memberService;
     @Resource
@@ -64,16 +59,12 @@ public class IndexController extends BaseController{
         }
         Member loginMember = MemberUtil.getLoginMember(request);
         int loginMemberId = loginMember == null ? 0 : loginMember.getId();
-        ResponseModel articleModel = articleService.listByPage(page,key,cateid,1,0);
         ResponseModel groupTopicModel = groupTopicService.listByPage(page,key,cateid,1,0);
         ResponseModel groupModel = groupService.listByPage(1,page,key);
         ResponseModel linkModel = linkService.recommentList();
         page.setPageSize(50);
-        ResponseModel weiboModel = weiboService.listByPage(page,0,loginMemberId,"");
-        model.addAttribute("articleModel",articleModel);
         model.addAttribute("groupTopicModel",groupTopicModel);
         model.addAttribute("groupModel",groupModel);
-        model.addAttribute("weiboModel",weiboModel);
         model.addAttribute("linkModel",linkModel);
 
         return jeesnsConfig.getFrontTemplate() + "/index";
@@ -109,14 +100,10 @@ public class IndexController extends BaseController{
         if(loginMember != null){
             loginMemberId = loginMember.getId().intValue();
         }
-        if("article".equals(type)){
-            model.addAttribute("model", articleService.listByPage(page,"",0,1, id));
-        } else if("groupTopic".equals(type)){
+        if("groupTopic".equals(type)){
             model.addAttribute("model", groupTopicService.listByPage(page,"",0,1, id));
         } else if("group".equals(type)){
             model.addAttribute("model", groupFansService.listByMember(page, id));
-        } else if("weibo".equals(type)){
-            model.addAttribute("model", weiboService.listByPage(page,id,loginMemberId,""));
         } else if("follows".equals(type)){
             model.addAttribute("model", memberFansService.followsList(page,id));
         } else if("fans".equals(type)){

@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 16/9/29.
- */
+
 public interface IConfigService {
     List<Config> allList();
 

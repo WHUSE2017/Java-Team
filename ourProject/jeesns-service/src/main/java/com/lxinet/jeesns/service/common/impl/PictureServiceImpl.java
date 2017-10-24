@@ -11,9 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/3/7.
- */
+
 @Service
 public class PictureServiceImpl implements IPictureService {
     @Resource

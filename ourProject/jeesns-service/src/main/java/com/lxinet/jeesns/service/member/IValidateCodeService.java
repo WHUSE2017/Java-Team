@@ -5,7 +5,6 @@ import com.lxinet.jeesns.model.member.ValidateCode;
 
 /**
  * 验证码Service接口
- * Created by zchuanzhao on 17/01/20.
  */
 public interface IValidateCodeService {
 

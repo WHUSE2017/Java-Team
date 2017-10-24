@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/3/24.
- */
 @Service
 public class ScoreRuleServiceImpl implements IScoreRuleService {
     @Resource

@@ -27,10 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- * Created by zchuanzhao on 16/9/29.
- */
 @Service("memberService")
 public class MemberServiceImpl implements IMemberService {
     @Resource

@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
-/**
- * Created by zchuanzhao on 2016/10/14.
- */
+
 @Service("archiveService")
 public class ArchiveServiceImpl implements IArchiveService {
     @Resource

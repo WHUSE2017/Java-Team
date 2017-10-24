@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/3/9.
- */
 @Service("messageService")
 public class MessageServiceImpl implements IMessageService {
     @Resource

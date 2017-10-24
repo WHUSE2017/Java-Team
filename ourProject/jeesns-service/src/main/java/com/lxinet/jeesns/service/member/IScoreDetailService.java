@@ -5,9 +5,6 @@ import com.lxinet.jeesns.core.model.Page;
 import com.lxinet.jeesns.model.member.ScoreDetail;
 
 
-/**
- * Created by zchuanzhao on 17/3/24.
- */
 public interface IScoreDetailService {
 
     ResponseModel<ScoreDetail> list(Page page, Integer memberId);

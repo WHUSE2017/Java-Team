@@ -5,9 +5,6 @@ import com.lxinet.jeesns.core.dto.ResponseModel;
 import com.lxinet.jeesns.model.member.Member;
 
 
-/**
- * Created by zchuanzhao on 2016/10/14.
- */
 public interface IArchiveService {
 
     Archive findByArchiveId(int id);

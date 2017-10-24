@@ -8,9 +8,6 @@ import javax.annotation.Resource;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 16/9/29.
- */
 @Service("memberTokenService")
 public class MemberTokenServiceImpl implements IMemberTokenService {
     @Resource

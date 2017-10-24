@@ -5,9 +5,7 @@ import com.lxinet.jeesns.model.system.ScoreRule;
 
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/2/14.
- */
+
 public interface IScoreRuleService {
 
     List<ScoreRule> list();

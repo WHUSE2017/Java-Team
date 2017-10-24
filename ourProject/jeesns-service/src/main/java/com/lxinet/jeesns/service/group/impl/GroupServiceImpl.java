@@ -22,9 +22,6 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by zchuanzhao on 2016/12/23.
- */
 @Service("groupService")
 public class GroupServiceImpl implements IGroupService {
     @Resource

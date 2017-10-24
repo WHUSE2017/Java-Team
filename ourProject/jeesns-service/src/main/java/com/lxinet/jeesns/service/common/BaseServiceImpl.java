@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * Service基类实现类
- * Created by zchuanzhao on 2016/11/26.
  */
 public abstract class BaseServiceImpl<T> implements IBaseService<T> {
     protected abstract IBaseDao<T> getDao();

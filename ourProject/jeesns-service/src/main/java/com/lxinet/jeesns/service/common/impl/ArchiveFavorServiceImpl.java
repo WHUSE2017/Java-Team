@@ -6,9 +6,6 @@ import com.lxinet.jeesns.service.common.IArchiveFavorService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
-/**
- * Created by zchuanzhao on 2017/2/9.
- */
 @Service("archiveFavorService")
 public class ArchiveFavorServiceImpl implements IArchiveFavorService {
     @Resource

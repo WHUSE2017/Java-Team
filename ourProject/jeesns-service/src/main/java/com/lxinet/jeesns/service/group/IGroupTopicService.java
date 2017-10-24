@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
-/**
- * Created by zchuanzhao on 2016/12/26.
- */
 public interface IGroupTopicService {
     GroupTopic findById(int id);
 

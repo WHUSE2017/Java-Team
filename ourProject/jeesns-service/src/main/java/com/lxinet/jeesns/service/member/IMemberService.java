@@ -7,9 +7,7 @@ import com.lxinet.jeesns.model.member.Member;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 16/9/29.
- */
+
 public interface IMemberService {
 
     /**

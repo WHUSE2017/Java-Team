@@ -6,7 +6,6 @@ import com.lxinet.jeesns.model.member.Message;
 
 /**
  * 会员私信Service
- * Created by zchuanzhao on 17/3/9.
  */
 public interface IMessageService {
 

@@ -4,9 +4,7 @@ import com.lxinet.jeesns.core.dto.ResponseModel;
 import com.lxinet.jeesns.core.model.Page;
 import com.lxinet.jeesns.model.system.ActionLog;
 
-/**
- * Created by zchuanzhao on 2017/2/14.
- */
+
 public interface IActionLogService {
 
     ResponseModel<ActionLog> listByPage(Page page, Integer memberId);
