@@ -5,7 +5,6 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 文章DAO接口
- * Created by zchuanzhao on 2016/9/26.
  */
 public interface IArchiveDao extends IBaseDao<Archive> {
 

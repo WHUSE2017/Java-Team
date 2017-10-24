@@ -5,7 +5,6 @@ import com.lxinet.jeesns.core.dto.ResponseModel;
 import com.lxinet.jeesns.core.model.Page;
 import com.lxinet.jeesns.core.utils.DateFormatUtil;
 import com.lxinet.jeesns.interceptor.AdminLoginInterceptor;
-import com.lxinet.jeesns.model.common.Ads;
 import com.lxinet.jeesns.model.common.Link;
 import com.lxinet.jeesns.service.common.ILinkService;
 import com.lxinet.jeesns.web.common.BaseController;

@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * 数据库操作基类接口
- * Created by zchuanzhao on 2016/9/26.
  * @param <T>
  */
 public interface IBaseDao<T> {

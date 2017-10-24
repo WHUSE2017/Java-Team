@@ -6,9 +6,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 16/12/23.
- */
+
 public class Group implements Serializable {
     private Integer id;
     private Date createTime;

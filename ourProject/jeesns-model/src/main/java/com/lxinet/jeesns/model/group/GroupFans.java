@@ -6,9 +6,7 @@ import com.lxinet.jeesns.model.member.Member;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 16/12/26.
- */
+
 public class GroupFans implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;

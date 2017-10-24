@@ -7,9 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/2/16.
- */
 public interface IMemberFansDao extends IBaseDao<MemberFans> {
 
     List<MemberFans> followsList(@Param("page") Page page, @Param("whoFollowId") Integer whoFollowId);

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  * 系统设置信息实体类
- * Created by zchuanzhao on 2016/11/26.
  */
 public class Config implements Serializable {
     private String jkey;

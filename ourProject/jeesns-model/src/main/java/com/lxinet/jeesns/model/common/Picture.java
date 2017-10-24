@@ -3,9 +3,6 @@ package com.lxinet.jeesns.model.common;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 2017/3/1.
- */
 public class Picture implements Serializable {
     private Integer pictureId;
     private Date createTime;

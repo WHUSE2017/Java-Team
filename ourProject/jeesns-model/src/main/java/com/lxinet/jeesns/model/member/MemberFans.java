@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 17/2/15.
- */
 public class MemberFans implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;

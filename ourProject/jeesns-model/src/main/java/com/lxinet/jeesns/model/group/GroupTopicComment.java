@@ -6,9 +6,7 @@ import com.lxinet.jeesns.model.member.Member;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 16/12/27.
- */
+
 public class GroupTopicComment implements Serializable {
     private Integer id;
 

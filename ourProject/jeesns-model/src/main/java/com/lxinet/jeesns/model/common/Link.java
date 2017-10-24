@@ -7,7 +7,6 @@ import java.util.Date;
 
 /**
  * 友情链接
- * Created by zchuanzhao on 2017-10-13.
  */
 public class Link {
     private Integer id;

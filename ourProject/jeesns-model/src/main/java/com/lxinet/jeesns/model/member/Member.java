@@ -6,10 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 会员实体类
- * Created by zchuanzhao on 16/9/26.
- */
+
 public class Member implements Serializable {
 	private Integer id;
 	private Date createTime;

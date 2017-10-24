@@ -5,7 +5,6 @@ import java.util.Date;
 
 /**
  * 会员私信
- * Created by zchuanzhao on 17/3/9.
  */
 public class Message implements Serializable {
     private Integer id;

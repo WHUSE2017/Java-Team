@@ -5,9 +5,7 @@ import com.lxinet.jeesns.model.common.Archive;
 
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 16/12/26.
- */
+
 public class GroupTopic extends Archive {
     private Integer id;
     private Date collectTime;

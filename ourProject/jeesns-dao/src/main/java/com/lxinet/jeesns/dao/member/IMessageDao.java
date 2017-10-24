@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * 会员私信DAO
- * Created by zchuanzhao on 17/3/9.
  */
 public interface IMessageDao extends IBaseDao<Message> {
     List<Message> listByPage(@Param("page") Page page, @Param("fromMemberId") Integer fromMemberId, @Param("toMemberId") Integer toMemberId);

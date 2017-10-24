@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 2017/3/24.
- */
 public class ScoreRule implements Serializable {
     private Integer id;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

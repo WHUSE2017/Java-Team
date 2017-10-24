@@ -7,9 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 16/12/26.
- */
 public interface IGroupTopicDao extends IBaseDao<GroupTopic> {
 
     int save(GroupTopic groupTopic);

@@ -5,9 +5,7 @@ import com.lxinet.jeesns.model.member.Member;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 2017/2/14.
- */
+
 public class ActionLog implements Serializable {
     private Integer id;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

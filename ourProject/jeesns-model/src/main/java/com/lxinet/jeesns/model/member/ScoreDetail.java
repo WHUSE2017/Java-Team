@@ -3,9 +3,6 @@ package com.lxinet.jeesns.model.member;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 17/3/24.
- */
 public class ScoreDetail implements Serializable {
     private Integer id;
     private Date createTime;

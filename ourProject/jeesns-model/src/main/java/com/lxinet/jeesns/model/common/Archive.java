@@ -12,7 +12,6 @@ import java.util.Date;
 
 /**
  * 文章实体类
- * Created by zchuanzhao on 2016/9/26.
  */
 public class Archive implements Serializable {
     private Integer archiveId;

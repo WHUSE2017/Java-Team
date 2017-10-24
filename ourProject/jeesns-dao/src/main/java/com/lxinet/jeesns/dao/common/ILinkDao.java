@@ -5,9 +5,6 @@ import com.lxinet.jeesns.model.common.Link;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017-10-13.
- */
 public interface ILinkDao extends IBaseDao<Link>{
 
     /**

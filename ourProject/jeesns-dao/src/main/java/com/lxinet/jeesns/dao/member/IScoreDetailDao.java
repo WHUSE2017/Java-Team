@@ -7,9 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created by zchuanzhao on 2017/2/16.
- */
 public interface IScoreDetailDao extends IBaseDao<ScoreDetail> {
 
     List<ScoreDetail> listByPage(@Param("page") Page page, @Param("memberId") Integer memberId);

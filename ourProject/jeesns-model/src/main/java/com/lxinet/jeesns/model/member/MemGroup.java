@@ -7,7 +7,6 @@ import java.util.Date;
 
 /**
  * 会员分组实体类
- * Created by zchuanzhao on 16/9/26.
  */
 public class MemGroup implements Serializable {
     private Integer id;

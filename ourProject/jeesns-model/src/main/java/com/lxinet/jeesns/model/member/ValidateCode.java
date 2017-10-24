@@ -7,7 +7,6 @@ import java.util.Date;
 
 /**
  * 验证码
- * Created by zchuanzhao on 17/01/20.
  */
 public class ValidateCode implements Serializable {
 	private Integer id;

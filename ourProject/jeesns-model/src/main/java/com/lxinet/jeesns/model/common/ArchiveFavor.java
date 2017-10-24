@@ -3,9 +3,7 @@ package com.lxinet.jeesns.model.common;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 2017/2/9.
- */
+
 public class ArchiveFavor implements Serializable {
     private Integer id;
     private Date createTime;

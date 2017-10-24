@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * 会员DAO接口
- * Created by zchuanzhao on 16/9/26.
  */
 public interface IMemberDao extends IBaseDao<Member> {
 

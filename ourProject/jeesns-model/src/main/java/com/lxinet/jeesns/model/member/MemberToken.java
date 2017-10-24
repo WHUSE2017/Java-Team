@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by zchuanzhao on 17/7/15.
- */
 public class MemberToken implements Serializable {
     private Integer id;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
