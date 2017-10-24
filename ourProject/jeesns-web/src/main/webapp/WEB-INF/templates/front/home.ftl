@@ -86,13 +86,6 @@
                     <div class="col-sm-2">
                         <div class="float-e-margins">
                             <div class="feed-activity-list">
-                                <a href="${basePath}/u/${member.id}">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            动态
-                                        </div>
-                                    </div>
-                                </a>
                                 <a href="${basePath}/u/${member.id}/home/fans">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -107,13 +100,6 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="${basePath}/u/${member.id}/home/article">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            文章
-                                        </div>
-                                    </div>
-                                </a>
                                 <a href="${basePath}/u/${member.id}/home/groupTopic">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -121,13 +107,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="${basePath}/u/${member.id}/home/weibo">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            微博
-                                        </div>
-                                    </div>
-                                </a>
+                        
                                 <a href="${basePath}/u/${member.id}/home/group">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -142,13 +122,7 @@
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
                                 <h5>
-                                    <#if type=="article">
-                                        文章
-                                    <#elseif type=="groupTopic">
-                                        群贴
-                                    <#elseif type=="weibo">
-                                        微博
-                                    <#elseif type=="groupTopic">
+                                    <#if type=="groupTopic">
                                         群贴
                                     <#elseif type=="fans">
                                         粉丝

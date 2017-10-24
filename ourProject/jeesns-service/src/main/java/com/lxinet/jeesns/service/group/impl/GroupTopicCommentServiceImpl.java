@@ -9,9 +9,6 @@ import com.lxinet.jeesns.model.member.Member;
 import com.lxinet.jeesns.service.group.IGroupTopicCommentService;
 import com.lxinet.jeesns.dao.group.IGroupTopicCommentDao;
 import com.lxinet.jeesns.service.group.IGroupTopicService;
-import com.lxinet.jeesns.service.member.IScoreDetailService;
-import com.lxinet.jeesns.service.system.IActionLogService;
-import com.lxinet.jeesns.common.utils.ActionUtil;
 import com.lxinet.jeesns.common.utils.ScoreRuleConsts;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -23,10 +20,6 @@ public class GroupTopicCommentServiceImpl implements IGroupTopicCommentService {
     private IGroupTopicCommentDao groupTopicCommentDao;
     @Resource
     private IGroupTopicService groupTopicService;
-    @Resource
-    private IActionLogService actionLogService;
-    @Resource
-    private IScoreDetailService scoreDetailService;
 
     @Override
     public GroupTopicComment findById(int id) {
@@ -49,8 +42,6 @@ public class GroupTopicCommentServiceImpl implements IGroupTopicCommentService {
         groupTopicComment.setCommentId(commentId);
         int result = groupTopicCommentDao.save(groupTopicComment);
         if(result == 1){
-            //群组帖子评论奖励
-            scoreDetailService.scoreBonus(loginMember.getId(), ScoreRuleConsts.GROUP_TOPIC_COMMENTS, groupTopicComment.getId());
             return new ResponseModel(1,"评论成功");
         }else {
             return new ResponseModel(-1,"评论失败");
@@ -78,9 +69,6 @@ public class GroupTopicCommentServiceImpl implements IGroupTopicCommentService {
         }
         int result = groupTopicCommentDao.delete(id);
         if(result == 1){
-            //扣除积分
-            scoreDetailService.scoreCancelBonus(loginMember.getId(),ScoreRuleConsts.GROUP_TOPIC_COMMENTS,id);
-            actionLogService.save(loginMember.getCurrLoginIp(),loginMember.getId(), ActionUtil.DELETE_GROUP_TOPIC_COMMENT,"ID："+groupTopicComment.getId()+"，内容："+groupTopicComment.getContent());
             return new ResponseModel(1,"删除成功");
         }
         return new ResponseModel(-1,"删除失败");

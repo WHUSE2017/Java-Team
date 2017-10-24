@@ -10,10 +10,7 @@ import com.lxinet.jeesns.web.common.BaseController;
 import com.lxinet.jeesns.model.member.Member;
 import com.lxinet.jeesns.service.member.IMemberService;
 import com.lxinet.jeesns.service.member.IMessageService;
-import com.lxinet.jeesns.model.system.ActionLog;
-import com.lxinet.jeesns.service.system.IActionLogService;
 import com.lxinet.jeesns.service.system.IConfigService;
-//import com.lxinet.jeesns.modules.weibo.service.IWeiboService;
 import com.lxinet.jeesns.common.utils.ConfigUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +27,6 @@ public class MemberController extends BaseController {
     private IMemberService memberService;
     @Resource
     private IConfigService configService;
-    @Resource
-    private IActionLogService actionLogService;
     @Resource
     private IMessageService messageService;
     @Resource
@@ -164,8 +159,6 @@ public class MemberController extends BaseController {
         Member loginMember = MemberUtil.getLoginMember(request);
         int loginMemberId = loginMember == null ? 0 : loginMember.getId();
         Page page = new Page(request);
-        ResponseModel<ActionLog> list = actionLogService.memberActionLog(page,loginMemberId);
-        model.addAttribute("actionLogModel",list);
         return MEMBER_FTL_PATH + "index";
     }
 

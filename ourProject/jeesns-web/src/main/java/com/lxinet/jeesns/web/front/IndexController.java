@@ -15,12 +15,8 @@ import com.lxinet.jeesns.service.group.IGroupService;
 import com.lxinet.jeesns.service.group.IGroupTopicService;
 import com.lxinet.jeesns.service.member.IMemberFansService;
 import com.lxinet.jeesns.web.common.BaseController;
-//import com.lxinet.jeesns.cms.service.IArticleService;
 import com.lxinet.jeesns.model.member.Member;
 import com.lxinet.jeesns.service.member.IMemberService;
-import com.lxinet.jeesns.model.system.ActionLog;
-import com.lxinet.jeesns.service.system.IActionLogService;
-//import com.lxinet.jeesns.weibo.service.IWeiboService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,8 +36,6 @@ public class IndexController extends BaseController{
     private IMemberService memberService;
     @Resource
     private IArchiveService archiveService;
-    @Resource
-    private IActionLogService actionLogService;
     @Resource
     private JeesnsConfig jeesnsConfig;
     @Resource
@@ -80,8 +74,6 @@ public class IndexController extends BaseController{
         model.addAttribute("member",member);
         Member loginMember = MemberUtil.getLoginMember(request);
         model.addAttribute("loginMember", loginMember);
-        ResponseModel<ActionLog> list = actionLogService.memberActionLog(page,id);
-        model.addAttribute("actionLogModel",list);
         return jeesnsConfig.getFrontTemplate() + "/u";
     }
 

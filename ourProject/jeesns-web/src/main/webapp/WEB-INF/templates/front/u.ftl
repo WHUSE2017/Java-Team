@@ -68,10 +68,6 @@
                         <span>粉丝</span>
                         <a href="${basePath}/u/${member.id}/home/fans">${member.fans}</a>
                     </div>
-                    <div class="score">
-                        <span>积分</span>
-                        <a href="${basePath}/member/scoreDetail/list">${member.score}</a>
-                    </div>
                     <div class="login-info">
                         加入时间:${member.createTime?string('yyyy-MM-dd')}
                         最近登录:<#if member.currLoginTime??>${member.currLoginTime?string('yyyy-MM-dd')}<#else>未登陆过</#if>
@@ -88,13 +84,7 @@
                     <div class="col-sm-2">
                         <div class="float-e-margins">
                             <div class="feed-activity-list">
-                                <a href="${basePath}/u/${member.id}">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            动态
-                                        </div>
-                                    </div>
-                                </a>
+                              
                                 <a href="${basePath}/u/${member.id}/home/fans">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -109,24 +99,10 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="${basePath}/u/${member.id}/home/article">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            文章
-                                        </div>
-                                    </div>
-                                </a>
                                 <a href="${basePath}/u/${member.id}/home/groupTopic">
                                     <div class="feed-element">
                                         <div class="media-body">
                                             群帖
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="${basePath}/u/${member.id}/home/weibo">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            微博
                                         </div>
                                     </div>
                                 </a>

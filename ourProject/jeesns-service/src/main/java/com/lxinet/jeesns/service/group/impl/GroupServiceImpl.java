@@ -9,10 +9,7 @@ import com.lxinet.jeesns.service.group.IGroupService;
 import com.lxinet.jeesns.dao.group.IGroupDao;
 import com.lxinet.jeesns.service.group.IGroupFansService;
 import com.lxinet.jeesns.service.member.IMemberService;
-import com.lxinet.jeesns.service.member.IScoreDetailService;
-import com.lxinet.jeesns.service.system.IActionLogService;
 import com.lxinet.jeesns.service.system.IConfigService;
-import com.lxinet.jeesns.common.utils.ActionUtil;
 import com.lxinet.jeesns.common.utils.ConfigUtil;
 import com.lxinet.jeesns.common.utils.ScoreRuleConsts;
 import org.springframework.stereotype.Service;
@@ -32,10 +29,6 @@ public class GroupServiceImpl implements IGroupService {
     private IMemberService memberService;
     @Resource
     private IConfigService configService;
-    @Resource
-    private IActionLogService actionLogService;
-    @Resource
-    private IScoreDetailService scoreDetailService;
 
     @Override
     public ResponseModel listByPage(int status, Page page, String key) {
@@ -120,8 +113,6 @@ public class GroupServiceImpl implements IGroupService {
         if(groupDao.save(group) == 1){
             //创建者默认关注群组
             groupFansService.save(loginMember,group.getId());
-            //申请群组奖励、扣款
-            scoreDetailService.scoreBonus(loginMember.getId(), ScoreRuleConsts.APPLY_GROUP, group.getId());
             return new ResponseModel(1,"申请成功，请等待审核");
         }
         return new ResponseModel(-1,"操作失败，请重试");
@@ -176,7 +167,6 @@ public class GroupServiceImpl implements IGroupService {
             return new ResponseModel(-1,"群组不存在");
         }
         if(groupDao.delete(id) == 1){
-            actionLogService.save(loginMember.getCurrLoginIp(),loginMember.getId(), ActionUtil.DELETE_GROUP,"ID："+group.getId()+"，名字："+group.getName());
             return new ResponseModel(1,"删除成功");
         }
         return new ResponseModel(-1,"删除失败");
