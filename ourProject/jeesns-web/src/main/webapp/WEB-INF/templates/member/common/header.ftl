@@ -8,7 +8,8 @@
                                 class="navbar-toggle collapsed" type="button">
                             <i class="fa fa-reorder"></i>
                         </button>
-                        <a href="${basePath}/" class="navbar-brand"><img src="${basePath}${SITE_LOGO}" height="50px"/></a>
+                    <#--<a href="${basePath}/" class="navbar-brand"><img src="${basePath}${SITE_LOGO}" height="50px"/></a>-->
+                        <a href="???" class="navbar-brand"><img src="${basePath}/res/common/images/headerlogo.png" height="50px"/></a>
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
@@ -16,16 +17,20 @@
                                 <a href="${basePath}/"> 首页</a>
                             </li>
                             <li>
-     <!--                        <a href="${basePath}/article/list"> 文章</a>  -->
+                            <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a href="${basePath}/article/list"> 开设课程</a>
+                            <#else>
+                                <a href="${basePath}/article/list"> 选课</a>
+                            </#if>
                             </li>
                             <li>
-   <!--                           <a href="${basePath}/weibo/list"> ${WEIBO_ALIAS}</a>   -->
+                                <a href="${basePath}/weibo/list"> 课表</a>
                             </li>
                             <li>
                                 <a href="${basePath}/group/"> ${GROUP_ALIAS}</a>
                             </li>
                             <li>
-     <!--                      <a href="${basePath}/action/list"> 动态</a>  -->
+                                <a href="${basePath}/action/list"> 动态</a>
                             </li>
                         </ul>
                         <ul class="nav navbar-top-links navbar-right">
@@ -37,7 +42,11 @@
                                 <div class="btn-group nav-username">
                                     <img src="${basePath}${loginUser.avatar}" class="img-circle" width="25px" height="25px" style="margin-top: 1px;margin-right:5px;"/>
                                     <a class="header-action-link" href="javascript:void(0)">
-                                    ${loginUser.name}
+                                        <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                            教师
+                                        <#else>
+                                            学生
+                                        </#if>
                                         <#if unReadMessageNum &gt; 0><i class="fa fa-comments"></i></#if>
                                     </a>
                                     <ul class="dropdown-menu">
