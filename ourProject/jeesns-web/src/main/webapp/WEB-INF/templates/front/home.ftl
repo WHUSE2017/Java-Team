@@ -64,7 +64,7 @@
                         <a href="${basePath}/u/${member.id}/home/follows">${member.follows}</a>
                     </div>
                     <div class="fans">
-                        <span>粉丝</span>
+                        <span>学生</span>
                         <a href="${basePath}/u/${member.id}/home/fans">${member.fans}</a>
                     </div>
                     <div class="follows">
@@ -89,7 +89,7 @@
                                 <a href="${basePath}/u/${member.id}/home/fans">
                                     <div class="feed-element">
                                         <div class="media-body">
-                                            粉丝
+                                            学生
                                         </div>
                                     </div>
                                 </a>
@@ -125,7 +125,7 @@
                                     <#if type=="groupTopic">
                                         群贴
                                     <#elseif type=="fans">
-                                        粉丝
+                                        学生
                                     <#elseif type=="follows">
                                         关注
                                     <#elseif type=="group">
@@ -293,7 +293,7 @@
                                             <div class="media-body ">
                                                 <h4><strong><a href="${basePath}/u/${memberFans.followWhoMember.id}">${memberFans.followWhoMember.name}</a></strong></h4>
                                                 <p>${memberFans.followWhoMember.introduce}</p>
-                                                <small class="text-muted">${memberFans.followWhoMember.follows}关注 · ${memberFans.followWhoMember.fans}粉丝</small>
+                                                <small class="text-muted">${memberFans.followWhoMember.follows}关注 · ${memberFans.followWhoMember.fans}学生</small>
                                             </div>
                                         </div>
                                     </#list>
@@ -313,7 +313,7 @@
                                             <div class="media-body ">
                                                 <h4><strong><a href="${basePath}/u/${memberFans.whoFollowMember.id}">${memberFans.whoFollowMember.name}</a></strong></h4>
                                                 <p>${memberFans.whoFollowMember.introduce}</p>
-                                                <small class="text-muted">${memberFans.whoFollowMember.follows}关注 · ${memberFans.whoFollowMember.fans}粉丝</small>
+                                                <small class="text-muted">${memberFans.whoFollowMember.follows}关注 · ${memberFans.whoFollowMember.fans}学生</small>
                                             </div>
                                         </div>
                                     </#list>

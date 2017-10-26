@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>粉丝 - ${group.name} - ${GROUP_ALIAS} - ${SITE_NAME} - Powered By JEESNS</title>
+    <title>学生 - ${group.name} - ${GROUP_ALIAS} - ${SITE_NAME} - Powered By JEESNS</title>
     <meta name="keywords" content="${SITE_KEYS}"/>
     <meta name="description" content="${SITE_DESCRIPTION}"/>
     <meta name="author" content="JEESNS"/>
@@ -34,12 +34,12 @@
                         <li><a href="${basePath}/">首页</a></li>
                         <li><a href="${basePath}/group/">群组</a></li>
                         <li><a href="${basePath}/group/detail/${group.id}">${group.name}</a></li>
-                        <li class="active">粉丝</li>
+                        <li class="active">学生</li>
                     </ol>
                     <div class="ibox float-e-margins">
                         <div>
                             <div class="ibox-title">
-                                <h5>粉丝(${model.data?size})</h5>
+                                <h5>学生(${model.data?size})</h5>
                             </div>
                             <div class="ibox-content profile-content">
                             <#list model.data as groupFans>

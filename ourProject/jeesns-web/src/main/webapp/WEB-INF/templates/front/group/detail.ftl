@@ -112,7 +112,7 @@
             <div class="col-md-4 float-left">
                 <div class="panel group-detail-fans">
                     <div class="panel-heading">
-                        粉丝(${groupFansList?size})
+                        学生(${groupFansList?size})
                     </div>
                     <div class="panel-body list">
                         <#list groupFansList as groupFans>

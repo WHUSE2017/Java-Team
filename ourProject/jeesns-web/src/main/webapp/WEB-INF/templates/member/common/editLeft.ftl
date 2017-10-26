@@ -32,7 +32,7 @@
                     <a href="${basePath}/u/${loginUser.id}/home/follows">${loginUser.follows}</a>
                 </div>
                 <div class="fans">
-                    <span>粉丝</span>
+                    <span>学生</span>
                     <a href="${basePath}/u/${loginUser.id}/home/fans">${loginUser.fans}</a>
                 </div>
                 <div class="follows">

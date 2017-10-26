@@ -123,7 +123,7 @@
                                 <a href="${basePath}/u/${article.member.id}/home/follows">${article.member.follows}
                                     关注</a> /
                                 <a href="${basePath}/u/${article.member.id}/home/fans">${article.member.fans}
-                                    粉丝</a>
+                                    学生</a>
                             </p>
                             <p>
                             ${article.member.introduce}

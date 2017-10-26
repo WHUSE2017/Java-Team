@@ -34,7 +34,7 @@
             <div class="col-md-12 article-detail">
                 <form class="form-horizontal jeesns_form" role="form" action="${basePath}/group/apply" method="post">
                     <div class="form-group">
-                        <label class="col-sm-1 control-label">名称</label>
+                        <label class="col-sm-1 control-label">课程名称</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="name" name="name" placeholder="名称" data-type="require">
                         </div>
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-1 control-label">介绍</label>
+                        <label class="col-sm-1 control-label">课程介绍</label>
                         <div class="col-sm-8">
                             <textarea class="form-control" rows="3" name="introduce" alt="介绍"></textarea>
                         </div>

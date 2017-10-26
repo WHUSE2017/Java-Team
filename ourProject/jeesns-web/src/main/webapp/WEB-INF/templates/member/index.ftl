@@ -65,7 +65,7 @@
                         <a href="${basePath}/u/${loginUser.id}/home/follows">${loginUser.follows}</a>
                     </div>
                     <div class="fans">
-                        <span>粉丝</span>
+                        <span>学生</span>
                         <a href="${basePath}/u/${loginUser.id}/home/fans">${loginUser.fans}</a>
                     </div>
 
@@ -95,7 +95,7 @@
                                 <a href="${basePath}/u/${loginUser.id}/home/fans">
                                     <div class="feed-element">
                                         <div class="media-body">
-                                            粉丝
+                                            学生
                                         </div>
                                     </div>
                                 </a>

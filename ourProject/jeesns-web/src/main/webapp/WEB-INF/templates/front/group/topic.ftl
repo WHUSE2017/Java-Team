@@ -179,7 +179,7 @@
                                 <a href="${basePath}/u/${groupTopic.member.id}/home/follows">${groupTopic.member.follows}
                                     关注</a> /
                                 <a href="${basePath}/u/${groupTopic.member.id}/home/fans">${groupTopic.member.fans}
-                                    粉丝</a>
+                                    学生</a>
                             </p>
                             <p>
                             ${groupTopic.member.introduce}
