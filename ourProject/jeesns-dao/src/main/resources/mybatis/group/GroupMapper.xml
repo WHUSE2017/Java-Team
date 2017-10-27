@@ -17,13 +17,13 @@
 
   <select id="findById" parameterType="java.lang.Integer" resultMap="GroupResult">
     select a.id,a.create_time,a.name,a.logo,a.creator,a.creator as 'creatorMember.id',a.managers,a.tags,a.introduce,
-    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id and c.status=1) as topicCount,
+    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id) as topicCount,
     (select count(*) from tbl_group_fans as d where d.group_id=a.id) as fansCount,
     b.name as 'creatorMember.name' from tbl_group as a left join tbl_member as b on a.creator=b.id where a.id = #{id}
   </select>
   <select id="listByPage" resultMap="GroupResult">
     select a.id,a.create_time,a.name,a.logo,a.creator,a.creator as 'creatorMember.id',a.managers,a.tags,a.introduce,
-    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id and c.status=1) as topicCount,
+    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id) as topicCount,
     (select count(*) from tbl_group_fans as d where d.group_id=a.id) as fansCount,
     b.name as 'creatorMember.name' from tbl_group as a left join tbl_member as b on a.creator=b.id
     <where>
@@ -38,23 +38,24 @@
   </select>
   <select id="listByFollow" resultMap="GroupResult">
     select a.id,a.create_time,a.name,a.logo,a.creator,a.creator as 'creatorMember.id',a.managers,a.tags,a.introduce,
-    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id and c.status=1) as topicCount,
+    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id) as topicCount,
     (select count(*) from tbl_group_fans as d where d.group_id=a.id) as fansCount,
     b.name as 'creatorMember.name' from tbl_group as a left join tbl_member as b on a.creator=b.id
-    WHERE a.status = 1 AND d.member_id = #{memberId}
+    WHERE d.member_id = #{memberId}
     order by a.id DESC
   </select>
   <delete id="delete" parameterType="java.lang.Integer">
     delete from tbl_group where id = #{id}
   </delete>
   <insert id="save" parameterType="Group" useGeneratedKeys="true" keyProperty="id">
-    insert into tbl_group(create_time,name,logo,creator,managers,tags,introduce,can_post,topic_review)
-    values(now(),#{name},#{logo},#{creator},#{managers},#{tags},#{introduce},#{canPost},#{topicReview})
+    insert into tbl_group(create_time,name,logo,creator,managers,tags,introduce,can_post,topic_review,status)
+    values(now(),#{name},#{logo},#{creator},#{managers},#{tags},#{introduce},#{canPost},#{topicReview},#{status})
   </insert>
   <update id="update" parameterType="Group">
     update tbl_group
     <set>
       <if test="name != null">name = #{name},</if>
+      <if test="status != null">status = #{status},</if>
       <if test="logo != null">logo = #{logo},</if>
       <if test="tags != null">tags = #{tags},</if>
       <if test="managers != null">managers = #{managers},</if>
@@ -70,7 +71,7 @@
 
   <select id="listByCustom" resultMap="GroupResult">
     select a.id,a.create_time,a.name,a.logo,a.creator,a.creator as 'creatorMember.id',a.managers,a.tags,a.introduce,
-    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id and c.status=1) as topicCount,
+    a.can_post,a.status,a.topic_review,(select count(c.id) from tbl_group_topic as c where id=a.id ) as topicCount,
     (select count(*) from tbl_group_fans as d where d.group_id=a.id) as fansCount,
     b.name as 'creatorMember.name' from tbl_group as a left join tbl_member as b on a.creator=b.id
     <where>

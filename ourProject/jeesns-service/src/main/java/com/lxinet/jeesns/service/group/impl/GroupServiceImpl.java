@@ -180,6 +180,7 @@ public class GroupServiceImpl implements IGroupService {
         findGroup.setCanPost(group.getCanPost());
         findGroup.setTopicReview(group.getTopicReview());
         findGroup.setIntroduce(group.getIntroduce());
+        findGroup.setStatus(1);
         if(groupDao.update(findGroup) == 1){
             return new ResponseModel(1,"操作成功");
         }
