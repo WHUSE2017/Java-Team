@@ -81,13 +81,6 @@
                     <div class="col-sm-2">
                         <div class="float-e-margins">
                             <div class="feed-activity-list">
-                                <a href="${basePath}/member/message">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            私信
-                                        </div>
-                                    </div>
-                                </a>
                                 <a href="${basePath}/u/${loginUser.id}/home/fans">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -109,6 +102,24 @@
                                         </div>
                                     </div>
                                 </a>
+
+                            <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a href="${basePath}/u/${loginUser.id}/home/group">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                            我的群组
+                                        </div>
+                                    </div>
+                                </a>
+                            <#else>
+                                <a href="${basePath}/u/${loginUser.id}/home/group">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                            我的课表
+                                        </div>
+                                    </div>
+                                </a>
+                            </#if>
       
                
                             </div>

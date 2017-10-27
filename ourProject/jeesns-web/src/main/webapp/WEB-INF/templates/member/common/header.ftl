@@ -23,9 +23,9 @@
                             </li>
                             <li>
                             <#if loginUser?? && loginUser.isAdmin &gt; 0>
-                                <a href="${basePath}/u/1/home/group"> 群组管理</a>
-                            <#else>
-                                <a href="${basePath}/u/2/home/group/"> 我的课表</a>
+                                <a href="${basePath}/u/${loginUser.id}/home/group"> 群组管理</a>
+                            <#elseif loginUser??>
+                                <a href="${basePath}/u/${loginUser.id}/home/group"> 我的课表</a>
                             </#if>
                             </li>
 
