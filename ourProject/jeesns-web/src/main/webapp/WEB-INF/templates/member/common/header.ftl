@@ -13,25 +13,22 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
-                            <li>
-                                <a href="${basePath}/"> 首页</a>
-                            </li>
+\
                             <li>
                             <#if loginUser?? && loginUser.isAdmin &gt; 0>
-                                <a href="${basePath}/article/list"> 开设课程</a>
-                            <#else>
-                                <a href="${basePath}/article/list"> 选课</a>
+                                <a href="${basePath}/group/apply"> 开设课程</a>
+                            <#elseif loginUser??>
+                                <a href="${basePath}/group/${loginUser.id}"> 选课</a>
                             </#if>
                             </li>
                             <li>
-                                <a href="${basePath}/weibo/list"> 课表</a>
+                            <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a href="${basePath}/u/1/home/group"> 群组管理</a>
+                            <#else>
+                                <a href="${basePath}/u/2/home/group/"> 我的课表</a>
+                            </#if>
                             </li>
-                            <li>
-                                <a href="${basePath}/group/"> ${GROUP_ALIAS}</a>
-                            </li>
-                            <li>
-                                <a href="${basePath}/action/list"> 动态</a>
-                            </li>
+
                         </ul>
                         <ul class="nav navbar-top-links navbar-right">
                             <div class="header-action-btn">
@@ -55,9 +52,6 @@
                                             ${(unReadMessageNum > 0)?string("("+unReadMessageNum+")","")}
                                         </a></li>
                                         <li><a href="${basePath}/member/editInfo">设置</a></li>
-                                        <#if loginUser?? && loginUser.isAdmin &gt; 0>
-                                            <li><a href="${managePath}/" target="_blank">管理</a></li>
-                                        </#if>
                                         <li class="divider"></li>
                                         <li><a href="${basePath}/member/logout">退出</a></li>
                                     </ul>

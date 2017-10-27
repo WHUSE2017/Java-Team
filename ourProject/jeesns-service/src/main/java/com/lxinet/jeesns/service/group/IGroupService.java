@@ -20,6 +20,8 @@ public interface IGroupService {
 
     ResponseModel listByPage(int status, Page page, String key);
 
+    ResponseModel listByPageByMemberId(int status, Page page, String key,String memberId);
+    
     ResponseModel follow(Member loginMember, Integer groupId,int type);
 
     ResponseModel changeStatus(int id);

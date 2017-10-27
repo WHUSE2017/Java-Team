@@ -30,4 +30,6 @@ public interface IGroupFansDao extends IBaseDao<GroupFans> {
      * @return
      */
     List<Group> listByMember(@Param("page") Page page, @Param("memberId") Integer memberId);
+    
+    List<GroupFans> listByMemberId(@Param("page") Page page, @Param("memberId") Integer memberId);
 }

@@ -67,14 +67,8 @@
                         <span>学生</span>
                         <a href="${basePath}/u/${member.id}/home/fans">${member.fans}</a>
                     </div>
-                    <div class="follows">
-                        <span>积分</span>
-                        <a href="${basePath}/member/scoreDetail/list">${member.score}</a>
-                    </div>
-                    <div class="login-info">
-                        加入时间:${member.createTime?string('yyyy-MM-dd')}
-                        最近登录:<#if member.currLoginTime??>${member.currLoginTime?string('yyyy-MM-dd')}<#else>未登陆过</#if>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -86,6 +80,8 @@
                     <div class="col-sm-2">
                         <div class="float-e-margins">
                             <div class="feed-activity-list">
+                            
+                            
                                 <a href="${basePath}/u/${member.id}/home/fans">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -108,13 +104,25 @@
                                     </div>
                                 </a>
                         
+                         <#if loginUser?? && loginUser.isAdmin &gt; 0>
                                 <a href="${basePath}/u/${member.id}/home/group">
                                     <div class="feed-element">
                                         <div class="media-body">
-                                            关注群组
+                                            我的群组
                                         </div>
                                     </div>
                                 </a>
+                            <#else>
+                                 <a href="${basePath}/u/${member.id}/home/group">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                            我的课表
+                                        </div>
+                                    </div>
+                                </a>
+                            </#if>
+                            
+                            
                             </div>
                         </div>
                     </div>
@@ -129,9 +137,7 @@
                                     <#elseif type=="follows">
                                         关注
                                     <#elseif type=="group">
-                                        群贴
-                                    <#else>
-                                        关注群组
+                                        课表群组
                                     </#if>
                                 </h5>
                             </div>

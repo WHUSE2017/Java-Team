@@ -69,11 +69,7 @@
                         <a href="${basePath}/u/${loginUser.id}/home/fans">${loginUser.fans}</a>
                     </div>
 
-                    <div class="login-info">
-                        加入时间:${loginUser.createTime?string('yyyy-MM-dd')}
-                        最近登录:<#if loginUser.currLoginTime??>${loginUser.currLoginTime?string('yyyy-MM-dd')}<#else>未登陆过</#if>
-
-                    </div>
+           
                 </div>
             </div>
         </div>
@@ -114,13 +110,7 @@
                                     </div>
                                 </a>
       
-                                <a href="${basePath}/u/${loginUser.id}/home/group">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            关注群组
-                                        </div>
-                                    </div>
-                                </a>
+               
                             </div>
                         </div>
                     </div>

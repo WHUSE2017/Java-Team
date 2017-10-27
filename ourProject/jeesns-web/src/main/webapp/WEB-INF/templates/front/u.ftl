@@ -68,11 +68,7 @@
                         <span>学生</span>
                         <a href="${basePath}/u/${member.id}/home/fans">${member.fans}</a>
                     </div>
-                    <div class="login-info">
-                        加入时间:${member.createTime?string('yyyy-MM-dd')}
-                        最近登录:<#if member.currLoginTime??>${member.currLoginTime?string('yyyy-MM-dd')}<#else>未登陆过</#if>
 
-                    </div>
                 </div>
             </div>
         </div>

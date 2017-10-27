@@ -11,10 +11,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="${basePath}/">首页</a></li>
+                <li><a href="${basePath}/member/">个人中心</a></li>
  <!--            <li><a href="${basePath}/article/list">文章</a></li>            -->
  <!--             <li><a href="${basePath}/weibo/list">${WEIBO_ALIAS}</a></li>  -->
-                <li><a href="${basePath}/group/">${GROUP_ALIAS}</a></li>
+  <!--               <li><a href="${basePath}/u/2/home/group/">我的群组</a></li>  -->
  <!--             <li><a href="${basePath}/action/list">动态</a></li>            -->
             </ul>
             <ul class="nav navbar-top-links navbar-right">

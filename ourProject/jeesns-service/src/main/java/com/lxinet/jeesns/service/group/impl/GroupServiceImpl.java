@@ -4,20 +4,27 @@ import com.lxinet.jeesns.core.dto.ResponseModel;
 import com.lxinet.jeesns.core.model.Page;
 import com.lxinet.jeesns.core.utils.*;
 import com.lxinet.jeesns.model.group.Group;
+import com.lxinet.jeesns.model.group.GroupFans;
 import com.lxinet.jeesns.model.member.Member;
 import com.lxinet.jeesns.service.group.IGroupService;
 import com.lxinet.jeesns.dao.group.IGroupDao;
+import com.lxinet.jeesns.dao.group.IGroupFansDao;
 import com.lxinet.jeesns.service.group.IGroupFansService;
 import com.lxinet.jeesns.service.member.IMemberService;
 import com.lxinet.jeesns.service.system.IConfigService;
 import com.lxinet.jeesns.common.utils.ConfigUtil;
 import com.lxinet.jeesns.common.utils.ScoreRuleConsts;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Service("groupService")
 public class GroupServiceImpl implements IGroupService {
@@ -29,6 +36,8 @@ public class GroupServiceImpl implements IGroupService {
     private IMemberService memberService;
     @Resource
     private IConfigService configService;
+    @Resource
+    private IGroupFansDao groupFansDao;
 
     @Override
     public ResponseModel listByPage(int status, Page page, String key) {
@@ -40,7 +49,25 @@ public class GroupServiceImpl implements IGroupService {
         model.setData(list);
         return model;
     }
-
+    @Override
+    public ResponseModel listByPageByMemberId(int status, Page page, String key,String memberId) {
+        if (StringUtils.isNotBlank(key)){
+            key = "%"+key.trim()+"%";
+        }
+        List<Group> list = groupDao.listByPage(page, status,key);
+        List<GroupFans> fanslist = groupFansDao.listByMemberId(page, Integer.valueOf(memberId));
+        Set<Integer> groupId =new HashSet<>();
+        for (GroupFans groupFans : fanslist) {
+        	groupId.add(groupFans.getGroupId());
+        }
+        List<Group> filterlist =new ArrayList<>();
+        for (Group group : list) {
+			if(!groupId.contains(group.getId())){filterlist.add(group);}
+		}
+        ResponseModel model = new ResponseModel(0,page);
+        model.setData(filterlist);
+        return model;
+    }
     /**
      * 关注、取消关注群组
      * @param loginMember
@@ -96,7 +123,7 @@ public class GroupServiceImpl implements IGroupService {
                 return new ResponseModel(-1,"群组申请功能已关闭");
             }
             if("0".equals(config.get(ConfigUtil.GROUP_APPLY_REVIEW))){
-                group.setStatus(0);
+                group.setStatus(1);
             }else {
                 group.setStatus(1);
             }
@@ -113,7 +140,7 @@ public class GroupServiceImpl implements IGroupService {
         if(groupDao.save(group) == 1){
             //创建者默认关注群组
             groupFansService.save(loginMember,group.getId());
-            return new ResponseModel(1,"申请成功，请等待审核");
+            return new ResponseModel(1,"申请成功!");
         }
         return new ResponseModel(-1,"操作失败，请重试");
     }

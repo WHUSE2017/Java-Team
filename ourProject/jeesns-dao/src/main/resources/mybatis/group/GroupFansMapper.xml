@@ -27,4 +27,8 @@
     FROM tbl_group_fans as a INNER JOIN tbl_group as b
     on a.group_id = b.id WHERE a.member_id=#{memberId} order by a.create_time DESC
   </select>
+    <select id="listByMemberId" resultMap="GroupFansResult">
+    select* from tbl_group_fans
+    where tbl_group_fans.member_id=#{memberId} 
+  </select>
 </mapper>

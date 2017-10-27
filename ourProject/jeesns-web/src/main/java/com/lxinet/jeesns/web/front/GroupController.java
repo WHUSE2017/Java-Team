@@ -43,10 +43,10 @@ public class GroupController extends BaseController {
     @Resource
     private IMemberService memberService;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    public String index(String key,Model model) {
+    @RequestMapping(value = "/{memberId}",method = RequestMethod.GET)
+    public String index(@PathVariable("memberId") String memberId,String key,Model model) {
         Page page = new Page(request);
-        ResponseModel responseModel = groupService.listByPage(1,page,key);
+        ResponseModel responseModel = groupService.listByPageByMemberId(1,page,key,memberId);
         model.addAttribute("model",responseModel);
         model.addAttribute("key",key);
         return jeesnsConfig.getFrontTemplate() + "/group/index";
