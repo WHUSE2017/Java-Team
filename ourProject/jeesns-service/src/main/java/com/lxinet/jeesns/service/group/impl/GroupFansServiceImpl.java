@@ -33,7 +33,7 @@ public class GroupFansServiceImpl implements IGroupFansService {
     }
 
     /**
-     * 关注
+     * 选课
      * @param loginMember
      * @param groupId
      * @return
@@ -42,17 +42,17 @@ public class GroupFansServiceImpl implements IGroupFansService {
     public ResponseModel save(Member loginMember, Integer groupId) {
         if(groupFansDao.findByMemberAndGroup(groupId,loginMember.getId()) == null){
             if(groupFansDao.save(groupId,loginMember.getId()) == 1){
-                return new ResponseModel(1,"关注成功");
+                return new ResponseModel(1,"选课成功");
             }
         }else {
-            //已经关注了
-            return new ResponseModel(0,"关注成功");
+            //已经选课了
+            return new ResponseModel(0,"选课成功");
         }
-        return new ResponseModel(-1,"关注失败");
+        return new ResponseModel(-1,"选课失败");
     }
 
     /**
-     * 取消关注
+     * 取消选课
      * @param loginMember
      * @param groupId
      * @return
@@ -60,9 +60,9 @@ public class GroupFansServiceImpl implements IGroupFansService {
     @Override
     public ResponseModel delete(Member loginMember,Integer groupId) {
         if(groupFansDao.delete(groupId,loginMember.getId()) > 0){
-            return new ResponseModel(1,"取消关注成功");
+            return new ResponseModel(1,"取消选课成功");
         }
-        return new ResponseModel(-1,"取消关注失败");
+        return new ResponseModel(-1,"取消选课失败");
     }
 
 

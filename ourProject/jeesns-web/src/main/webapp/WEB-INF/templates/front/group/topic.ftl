@@ -140,22 +140,22 @@
                                 </a>
                                 </strong>
                             </span>
-                            <span class="text-right">
-                                <#if isfollow == true>
-                                    <a title="取消关注" href="${basePath}/group/nofollow/${groupTopic.group.id}"
-                                       target="_jeesnsLink"><i class="icon-minus"></i> 取消关注</a>
-                                <#else>
-                                    <a title="添加关注" href="${basePath}/group/follow/${groupTopic.group.id}"
-                                       target="_jeesnsLink"><i
-                                            class="icon-plus"></i> 关注</a>
-                                </#if>
-                                <#if loginUser?? && loginUser.id == groupTopic.group.creator>
-                                    . <a href="${basePath}/group/edit/${groupTopic.group.id}">编辑</a>
-                                </#if>
-                                <#if isManager == 1>
-                                    . <a href="${basePath}/group/auditList/${groupTopic.group.id}">审核帖子</a>
-                                </#if>
-                            </span>
+                            <#--<span class="text-right">-->
+                                <#--<#if isfollow == true>-->
+                                    <#--<a title="取消关注" href="${basePath}/group/nofollow/${groupTopic.group.id}"-->
+                                       <#--target="_jeesnsLink"><i class="icon-minus"></i> 取消关注</a>-->
+                                <#--<#else>-->
+                                    <#--<a title="添加关注" href="${basePath}/group/follow/${groupTopic.group.id}"-->
+                                       <#--target="_jeesnsLink"><i-->
+                                            <#--class="icon-plus"></i> 关注</a>-->
+                                <#--</#if>-->
+                                <#--<#if loginUser?? && loginUser.id == groupTopic.group.creator>-->
+                                    <#--. <a href="${basePath}/group/edit/${groupTopic.group.id}">编辑</a>-->
+                                <#--</#if>-->
+                                <#--<#if isManager == 1>-->
+                                    <#--. <a href="${basePath}/group/auditList/${groupTopic.group.id}">审核帖子</a>-->
+                                <#--</#if>-->
+                            <#--</span>-->
                         </p>
                     </div>
                     <div class="group-introduce">

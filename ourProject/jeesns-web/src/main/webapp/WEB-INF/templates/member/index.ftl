@@ -88,13 +88,13 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="${basePath}/u/${loginUser.id}/home/follows">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            关注
-                                        </div>
-                                    </div>
-                                </a>
+                                <#--<a href="${basePath}/u/${loginUser.id}/home/follows">-->
+                                    <#--<div class="feed-element">-->
+                                        <#--<div class="media-body">-->
+                                            <#--关注-->
+                                        <#--</div>-->
+                                    <#--</div>-->
+                                <#--</a>-->
                                 <a href="${basePath}/u/${loginUser.id}/home/groupTopic">
                                     <div class="feed-element">
                                         <div class="media-body">

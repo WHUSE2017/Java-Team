@@ -29,7 +29,9 @@
             <div class="panel-heading" style="margin-bottom: 30px">
                 ${GROUP_ALIAS}
                 <span class="pull-right">
-                    <a class="btn btn-primary m-t-n4" href="${basePath}/group/apply">申请</a>
+                    <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                        <a class="btn btn-primary m-t-n4" href="${basePath}/group/apply">申请</a>
+                    </#if>
                 </span>
             </div>
         <#list model.data as group>
@@ -49,7 +51,7 @@
                                 ${group.introduce}
                             </#if>
                         </p>
-                        <small class="text-muted">${group.topicCount}篇文章 · ${group.fansCount}人关注</small>
+                        <small class="text-muted">${group.fansCount}人已选</small>
                     </div>
                 </div>
             </div>

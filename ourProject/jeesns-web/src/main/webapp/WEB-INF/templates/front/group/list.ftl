@@ -49,7 +49,7 @@
                                 <div class="media-body ">
                                     <h4><strong><a href="${basePath}/group/detail/${group.id}">${group.name}</a></strong></h4>
                                     <p>${group.introduce}</p>
-                                    <small class="text-muted">${group.topicCount}篇文章 · ${group.fansCount}人关注</small>
+                                    <small class="text-muted">${group.topicCount}篇文章 · ${group.fansCount}人已选</small>
                                 </div>
                             </div>
                         </#list>

@@ -89,7 +89,7 @@
                                                     ${group.introduce}
                                                     </#if>
                                                 </p>
-                                                <small class="text-muted">${group.topicCount}篇文章 · ${group.fansCount}人关注</small>
+                                                <small class="text-muted">${group.topicCount}篇文章 · ${group.fansCount}人已选</small>
                                             </div>
                                         </div>
                                     </div>

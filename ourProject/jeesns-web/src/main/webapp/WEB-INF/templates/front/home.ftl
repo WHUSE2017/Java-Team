@@ -89,13 +89,13 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="${basePath}/u/${member.id}/home/follows">
-                                    <div class="feed-element">
-                                        <div class="media-body">
-                                            关注
-                                        </div>
-                                    </div>
-                                </a>
+                                <#--<a href="${basePath}/u/${member.id}/home/follows">-->
+                                    <#--<div class="feed-element">-->
+                                        <#--<div class="media-body">-->
+                                            <#--关注-->
+                                        <#--</div>-->
+                                    <#--</div>-->
+                                <#--</a>-->
                                 <a href="${basePath}/u/${member.id}/home/groupTopic">
                                     <div class="feed-element">
                                         <div class="media-body">
@@ -279,7 +279,7 @@
                                             <div class="media-body ">
                                                 <h4><strong><a href="${basePath}/group/detail/${groupFans.group.id}">${groupFans.group.name}</a></strong></h4>
                                                 <p>${groupFans.group.introduce}</p>
-                                                <small class="text-muted">${groupFans.group.topicCount}篇文章 · ${groupFans.group.fansCount}人关注</small>
+                                                <small class="text-muted">${groupFans.group.topicCount}篇帖子 · ${groupFans.group.fansCount}人已选</small>
                                             </div>
                                         </div>
                                     </#list>

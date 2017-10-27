@@ -38,11 +38,11 @@
                             </span>
                             <span class="text-right">
                                 <#if isfollow == true>
-                                    <a title="取消关注" href="${basePath}/group/nofollow/${group.id}"
-                                       target="_jeesnsLink"><i class="icon-minus"></i> 取消关注</a>
+                                    <a title="取消选课" href="${basePath}/group/nofollow/${group.id}"
+                                       target="_jeesnsLink"><i class="icon-minus"></i> 取消选课</a>
                                 <#else>
-                                    <a title="添加关注" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink"><i
-                                            class="icon-plus"></i> 关注</a>
+                                    <a title="添加选课" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink"><i
+                                            class="icon-plus"></i> 选课</a>
                                 </#if>
                                 <#if loginUser?? && loginUser.id == group.creator>
                                    . <a href="${basePath}/group/edit/${group.id}">编辑</a>
@@ -52,7 +52,7 @@
                                 </#if>
                             </span>
                         </p>
-                        <p>${model.page.totalCount}帖子 · ${groupFansList?size}关注</p>
+                        <p>${model.page.totalCount}帖子 · ${groupFansList?size}人已选</p>
                         <p><a href="${basePath}/u/${group.creatorMember.id}">${group.creatorMember.name}</a>
                             创建于${group.createTime?string("yyyy-MM-dd")}</p>
                     </div>
