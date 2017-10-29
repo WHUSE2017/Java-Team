@@ -38,6 +38,12 @@
                         用户名
                         <input type="text" name="name" class="form-control" placeholder="用户名" data-type="require">
                     </div>
+                      <div class="form-group">
+                        身份
+                        </br>
+                      <input type="radio" name="identity" value="student" checked>学生
+                      <input type="radio" name="identity" value="teacher" >教师
+                    </div>
                     <div class="form-group">
                         邮箱
                         <input type="email" name="email" class="form-control" placeholder="邮箱" data-type="require,email">

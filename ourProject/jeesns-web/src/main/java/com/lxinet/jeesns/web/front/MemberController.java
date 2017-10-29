@@ -64,16 +64,22 @@ public class MemberController extends BaseController {
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
-    public ResponseModel register(Member member,String repassword){
+    public ResponseModel register(Member member,String repassword,String identity){
         Map<String,String> config = configService.getConfigToMap();
         if("0".equals(config.get(ConfigUtil.MEMBER_REGISTER_OPEN))){
             return new ResponseModel(-1,"注册功能已关闭");
         }
-        if(member == null){
+        if(member == null||identity == null){
             return new ResponseModel(-1,"参数错误");
         }
-        if(member.getName().length() < 6){
-            return new ResponseModel(-1,"用户名长度最少6位");
+        if(identity.equals("student")){
+        	member.setIsAdmin(0);
+        }
+        if(identity.equals("teacher")){
+        	member.setIsAdmin(2);
+        }
+        if(member.getName().length() < 2){
+            return new ResponseModel(-1,"用户名长度最少2位");
         }
         if(!StringUtils.checkNickname(member.getName())){
             return new ResponseModel(-1,"用户名只能由中文、字母、数字、下划线(_)或者短横线(-)组成");
@@ -87,6 +93,7 @@ public class MemberController extends BaseController {
         if(!member.getPassword().equals(repassword)){
             return new ResponseModel(-1,"两次密码输入不一致");
         }
+
         return memberService.register(member,request);
     }
 
