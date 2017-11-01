@@ -57,7 +57,7 @@ public class CkeditorUploadController extends BaseController {
 
             fileName = file.getOriginalFilename();
             suffix = fileName.substring(fileName.lastIndexOf("."), fileName.length()).toLowerCase();
-            String[] imageExtensionNameArray = {".jpg", ".jpeg", ".png", ".gif", ".bmp",".txt",".ppt",".pptx",".xlsx",".xls",".docx",".doc"};
+            String[] imageExtensionNameArray = {".jpg", ".jpeg", ".png", ".gif", ".bmp",".txt",".ppt",".pptx",".xlsx",".xls",".docx",".doc",".zip",".rar"};
             String allImageExtensionName = "";
             boolean isContain = false;//默认不包含上传图片文件扩展名
             for (int i = 0; i < imageExtensionNameArray.length; i++) {
