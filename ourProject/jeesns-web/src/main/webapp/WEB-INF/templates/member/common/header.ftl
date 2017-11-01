@@ -9,7 +9,7 @@
                             <i class="fa fa-reorder"></i>
                         </button>
                     <#--<a href="${basePath}/" class="navbar-brand"><img src="${basePath}${SITE_LOGO}" height="50px"/></a>-->
-                        <a href="???" class="navbar-brand"><img src="${basePath}/res/common/images/headerlogo.png" height="50px"/></a>
+                        <img src="${basePath}/res/common/images/headerlogo.png" height="50px"/>
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">

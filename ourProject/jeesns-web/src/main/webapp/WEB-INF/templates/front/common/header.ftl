@@ -1,17 +1,11 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header m-navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">JEESNS</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand jeesns-logo" href="${basePath}/"><img src="${basePath}${SITE_LOGO}" height="50px"/></a>
+            <img src="${basePath}/res/common/images/headerlogo.png" height="50px"/>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="${basePath}/member/">个人中心</a></li>
+                <#--<li><a href="${basePath}/member/">个人中心</a></li>-->
  <!--            <li><a href="${basePath}/article/list">文章</a></li>            -->
  <!--             <li><a href="${basePath}/weibo/list">${WEIBO_ALIAS}</a></li>  -->
   <!--               <li><a href="${basePath}/u/2/home/group/">我的群组</a></li>  -->
