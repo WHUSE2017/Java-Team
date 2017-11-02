@@ -52,7 +52,7 @@
                                 </#if>
                             </span>
                         </p>
-                        <p>${model.page.totalCount}帖子 · ${groupFansList?size}人已选</p>
+                        <p>${model.page.totalCount}帖子 · ${groupFansList?size-1}人已选</p>
                         <p><a href="${basePath}/u/${group.creatorMember.id}">${group.creatorMember.name}</a>
                             创建于${group.createTime?string("yyyy-MM-dd")}</p>
                     </div>
@@ -112,7 +112,7 @@
             <div class="col-md-4 float-left">
                 <div class="panel group-detail-fans">
                     <div class="panel-heading">
-                        学生(${groupFansList?size})
+                        学生(${groupFansList?size-1})
                     </div>
                     <div class="panel-body list">
                         <#list groupFansList as groupFans>
