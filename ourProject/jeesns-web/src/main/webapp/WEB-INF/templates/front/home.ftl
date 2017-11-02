@@ -81,14 +81,23 @@
                         <div class="float-e-margins">
                             <div class="feed-activity-list">
                             
-                            
-                                <a href="${basePath}/u/${member.id}/home/fans">
+                              <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a href="${basePath}/group/apply">
                                     <div class="feed-element">
                                         <div class="media-body">
-                                            学生
+                                            开设课程
                                         </div>
                                     </div>
                                 </a>
+                                 <#else>
+                                 <a href="${basePath}/group/${loginUser.id}">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                           选课
+                                        </div>
+                                    </div>
+                                </a> 
+                                 </#if>
                                 <#--<a href="${basePath}/u/${member.id}/home/follows">-->
                                     <#--<div class="feed-element">-->
                                         <#--<div class="media-body">-->

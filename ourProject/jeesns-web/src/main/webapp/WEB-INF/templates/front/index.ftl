@@ -55,49 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="main-content m-t-10">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel group-topic-list no-border">
-                    <div class="panel-heading">
-                        推荐群组
-
-                    </div>
-                    <div class="panel-body">
-                        <div class="items">
-                            <div class="col-md-12 group-list">
-                            <@group_list status=1 num=8; group>
-                                <#list groupList as group>
-                                    <div class="col-md-3">
-                                        <div class="group-detail">
-                                            <div class="group-logo">
-                                                <a href="${basePath}/group/follow/${group.id}" target="_jeesnsLink">
-                                                    <img alt="image" class="img-rounded" src="${basePath}${group.logo}" width="100px" height="100px">
-                                                </a>
-                                            </div>
-                                            <div class="group-info">
-                                                <h4><strong><a title="添加选课" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink">${group.name}</a></strong></h4>
-                                                <p class="text-muted">
-                                                    <#if group.introduce?length &gt; 50>
-                                                    ${group.introduce?substring(0,50)}...
-                                                    <#else>
-                                                    ${group.introduce}
-                                                    </#if>
-                                                </p>
-                                                <small class="text-muted">${group.topicCount}篇帖子 · ${group.fansCount}人已选</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </#list>
-                            </@group_list>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+  </br>  </br>  </br> 
 </div>
 <#include "/${frontTemplate}/common/footer.ftl"/>
 <script type="text/javascript">

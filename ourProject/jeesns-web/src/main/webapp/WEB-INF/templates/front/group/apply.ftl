@@ -27,7 +27,9 @@
     <script src="${basePath}/res/plugins/webuploader/upload.js"></script>
 </head>
 <body class="gray-bg">
+
 <#include "/${frontTemplate}/common/header.ftl"/>
+
 <div class="container">
     <div class="main-content">
         <div class="row">
