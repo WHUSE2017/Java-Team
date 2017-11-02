@@ -12,7 +12,7 @@
  <!--             <li><a href="${basePath}/action/list">动态</a></li>            -->
             </ul>
             <ul class="nav navbar-top-links navbar-right">
-                <div class="nav navbar-nav navbar-nav-right">
+                <div class="header-action-btn">
                 <#if loginUser == null>
                     <li><a href="${basePath}/member/login">登录</a></li>
                     <li><a href="${basePath}/member/register">注册</a></li>
@@ -20,13 +20,19 @@
                     <div class="btn-group nav-username">
                         <img src="${basePath}${loginUser.avatar}" class="img-circle" width="25px" height="25px" style="margin-top: 1px;margin-right:5px;"/>
                         <a class="header-action-link" href="javascript:void(0)">
-                        ${loginUser.name}
-                            <#if unReadMessageNum &gt; 0><i class="icon-comments"></i></#if>
+                            <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                教师
+                            <#else>
+                                学生
+                            </#if>
+                            <#if unReadMessageNum &gt; 0><i class="fa fa-comments"></i></#if>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="${basePath}/member/">个人中心</a></li>
                             <li><a href="${basePath}/member/message">私信
-  
+                            ${(unReadMessageNum > 0)?string("("+unReadMessageNum+")","")}
+                            </a></li>
+                            <li><a href="${basePath}/member/editInfo">设置</a></li>
                             <li class="divider"></li>
                             <li><a href="${basePath}/member/logout">退出</a></li>
                         </ul>
