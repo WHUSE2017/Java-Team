@@ -65,7 +65,11 @@
                     <div class="panel-heading">
                         全部
                         <span class="pull-right">
-                            <a class="btn btn-primary m-t-n4" href="${basePath}/group/post/${group.id}">发帖</a>
+                         <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a class="btn btn-primary m-t-n4" href="${basePath}/group/post/${group.id}">布置作业</a>
+                          
+                            </#if>
+                           
                         </span>
                     </div>
                     <div class="panel-body">
