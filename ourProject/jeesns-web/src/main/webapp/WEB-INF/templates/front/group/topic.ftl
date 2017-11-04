@@ -68,7 +68,7 @@
                                         <#if loginUser.id == groupTopic.memberId>
                                             <li><a href="${basePath}/group/topicEdit/${groupTopic.id}">编辑</a></li>
                                         </#if>
-                                        <li><a href="${basePath}/group/delete/${groupTopic.id}" confirm="确定要删除帖子吗？" target="_jeesnsLink">删除</a></li>
+                                        <li><a href="${basePath}/group/delete/${groupTopic.id}" confirm="确定要删除作业吗？" target="_jeesnsLink">删除</a></li>
                                     </ul>
                                 </div>
                             </#if>
@@ -148,9 +148,7 @@
                                 <#--<#if loginUser?? && loginUser.id == groupTopic.group.creator>-->
                                     <#--. <a href="${basePath}/group/edit/${groupTopic.group.id}">编辑</a>-->
                                 <#--</#if>-->
-                                <#--<#if isManager == 1>-->
-                                    <#--. <a href="${basePath}/group/auditList/${groupTopic.group.id}">审核帖子</a>-->
-                                <#--</#if>-->
+                              
                             <#--</span>-->
                         </p>
                     </div>

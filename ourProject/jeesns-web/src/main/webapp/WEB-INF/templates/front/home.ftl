@@ -294,7 +294,7 @@
                                             <div class="media-body ">
                                                 <h4><strong><a href="${basePath}/group/detail/${groupFans.group.id}">${groupFans.group.name}</a></strong></h4>
                                                 <p>${groupFans.group.introduce}</p>
-                                                <small class="text-muted">${groupFans.group.topicCount}篇帖子 · ${groupFans.group.fansCount}人已选</small>
+                                                <small class="text-muted">${groupFans.group.topicCount}次作业 · ${groupFans.group.fansCount}人已选</small>
                                             </div>
                                         </div>
                                     </#list>

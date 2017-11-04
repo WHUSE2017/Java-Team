@@ -32,6 +32,7 @@
     <div class="main-content">
         <div class="row">
             <div class="col-md-12 article-detail">
+            </br>
                 <form class="form-horizontal jeesns_form" role="form" action="${basePath}/group/findpersonDetail"
                       method="post">
                     <input type="hidden" class="form-control" id="id" name="id">
@@ -42,7 +43,7 @@
                                    data-type="require" >
                         </div>
                     </div>
-    
+    </br>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-8">
                             <button type="submit" class="btn btn-info jeesns-submit">查找</button>

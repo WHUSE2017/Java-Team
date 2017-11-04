@@ -50,12 +50,10 @@
                                 <#if loginUser?? && loginUser.id == group.creator>
                                    . <a href="${basePath}/group/edit/${group.id}">编辑</a>
                                 </#if>
-                                <#if isManager == 1>
-                                   . <a href="${basePath}/group/auditList/${group.id}">审核帖子</a>
-                                </#if>
+                              
                             </span>
                         </p>
-                        <p>${model.page.totalCount}帖子 · ${groupFansList?size-1}人已选</p>
+                        <p>${model.page.totalCount}次作业 · ${groupFansList?size-1}人已选</p>
                         <p><a href="${basePath}/u/${group.creatorMember.id}">${group.creatorMember.name}</a>
                             创建于${group.createTime?string("yyyy-MM-dd")}</p>
                     </div>
