@@ -88,7 +88,7 @@
                     }
                     setTimeout(function () {
                         jeesnsDialog.closeAll();
-                    },3000);
+                    },1000);
                 }
             });
         })

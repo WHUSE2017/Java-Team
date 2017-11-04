@@ -60,13 +60,13 @@ var jeesns = {
                     jeesnsDialog.successTips(res.message);
                     setTimeout(function(){
                         window.location.href=window.location.href;
-                    },3000);
+                    },1000);
                 }else if(res.code==2){
                     jeesnsDialog.loading();
                     jeesnsDialog.successTips(res.message);
                     setTimeout(function(){
                         window.location.href=res.url;
-                    },3000);
+                    },1000);
                 }else if(res.code==3){
                     parent.window.location.href=parent.window.location.href;
                 }else if(res.code==-1){
@@ -207,13 +207,13 @@ var jeesns = {
                     jeesnsDialog.successTips(res.message);
                     setTimeout(function(){
                         window.location.href=window.location.href;
-                    },3000);
+                    },1000);
                 }else if(res.code==2){
                     jeesnsDialog.loading();
                     jeesnsDialog.successTips(res.message);
                     setTimeout(function(){
                         window.location.href=res.url;
-                    },3000);
+                    },1000);
                 }else if(res.code==3){
                     parent.window.location.href=parent.window.location.href;
                 }else{

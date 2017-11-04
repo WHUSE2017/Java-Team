@@ -17,12 +17,15 @@ import com.lxinet.jeesns.service.group.IGroupTopicCommentService;
 import com.lxinet.jeesns.service.group.IGroupTopicService;
 import com.lxinet.jeesns.model.member.Member;
 import com.lxinet.jeesns.service.member.IMemberService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller("frontGroupController")
@@ -45,7 +48,8 @@ public class GroupController extends BaseController {
 
     @RequestMapping(value = "/{memberId}",method = RequestMethod.GET)
     public String index(@PathVariable("memberId") String memberId,String key,Model model) {
-        Page page = new Page(request);
+
+    	Page page = new Page(request);
         ResponseModel responseModel = groupService.listByPageByMemberId(1,page,key,memberId);
         model.addAttribute("model",responseModel);
         model.addAttribute("key",key);
@@ -172,7 +176,31 @@ public class GroupController extends BaseController {
         model.addAttribute("loginUser", loginMember);
         return jeesnsConfig.getFrontTemplate() + "/group/edit";
     }
-
+    public HashMap<String, String> session=new HashMap<>();
+    @RequestMapping(value = "/findperson",method = RequestMethod.GET)
+    public String findperson(Model model){
+    	if(session.containsKey("personName")){
+            Member member = memberService.findByName(session.get("personName"));
+            session.remove("personName");
+            if(member == null){
+                return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1005, Const.INDEX_ERROR_FTL_PATH);
+            }
+            model.addAttribute("member",member);
+            Member loginMember = MemberUtil.getLoginMember(request);
+            model.addAttribute("loginMember", loginMember);
+    		String url=jeesnsConfig.getFrontTemplate() + "/u";
+    		return url;
+    	}
+    	return jeesnsConfig.getFrontTemplate() + "/group/findperson";
+    }
+    @RequestMapping(value = "/findpersonDetail",method = RequestMethod.POST)
+    @ResponseBody
+    public Object findpersonDetail(Model model,String personName){
+    	
+    	session.put("personName", personName);
+    	return new ResponseModel(1,"正在获取用户信息...");
+    
+    }
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
     public Object update(Group group){
