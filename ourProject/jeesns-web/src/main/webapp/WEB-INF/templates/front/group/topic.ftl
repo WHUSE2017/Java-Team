@@ -10,6 +10,9 @@
     <meta name="author" content="JEESNS"/>
     <link href="${basePath}/res/common/css/zui.min.css" rel="stylesheet">
     <link href="${basePath}/res/front/css/app.css" rel="stylesheet">
+    <link href="${basePath}/res/plugins/emoji/css/emoji.css" rel="stylesheet">
+    <link href="${basePath}/res/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="${basePath}/res/plugins/gallery/css/blueimp-gallery.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="${basePath}/res/common/js/html5shiv.min.js"></script>
     <script src="${basePath}/res/common/js/respond.min.js"></script>
@@ -19,6 +22,10 @@
     <script src="${basePath}/res/plugins/layer/layer.js"></script>
     <script src="${basePath}/res/common/js/jquery.form.js"></script>
     <script src="${basePath}/res/front/js/jeesns.js"></script>
+    <script src="${basePath}/res/plugins/emoji/js/underscore-min.js"></script>
+    <script src="${basePath}/res/plugins/emoji/js/editor.js"></script>
+    <script src="${basePath}/res/plugins/emoji/js/emojis.js"></script>
+    <script src="${basePath}/res/plugins/js-emoji/emoji.js"></script>
     <script>
         var base = "${basePath}";
         var groupTopicId = ${groupTopic.id};
@@ -92,7 +99,12 @@
                             <form class="form-horizontal jeesns_form"
                                   action="${basePath}/group/comment/${groupTopic.id}" method="post">
                                 <div class="form-group">
-                                    <textarea name="content" class="form-control new-comment-text" rows="2" placeholder="撰写评论..."></textarea>
+                                    <textarea name="content" class="form-control new-comment-text" id="group-content" rows="2" placeholder="撰写评论..."></textarea>
+                                </div>
+                                <div class="row emoji-container" id="emoji">
+                                    <a href="javascript:void(0)" >
+                                        <i class="icon-smile emoji-tbtn"></i>
+                                    </a>
                                 </div>
                                 <div class="form-group comment-user">
                                     <input type="submit" value="评论" class="pull-right btn btn-primary mg-t-10 jeesns-submit">
@@ -179,8 +191,14 @@
 
 </div>
 <#include "/${frontTemplate}/common/footer.ftl"/>
-<script>
-    $(document).ready(function () {
+<script type="text/javascript">
+    $(function () {
+
+        $('#emoji').emoji({
+            insertAfter: function (item) {
+                $('#group-content').insertContent(':' + item.name + ':')
+            }
+        }, "${basePath}");
         var pageNo = 1;
         group.commentList(groupTopicId, pageNo);
         $("#moreComment").click(function () {
@@ -191,6 +209,17 @@
             group.favor($(this), "${basePath}")
         });
     });
+    <#--$(document).ready(function () {-->
+        <#--var pageNo = 1;-->
+        <#--group.commentList(groupTopicId, pageNo);-->
+        <#--$("#moreComment").click(function () {-->
+            <#--pageNo++;-->
+            <#--group.commentList(articleId, pageNo);-->
+        <#--});-->
+        <#--$(".topic-favor").click(function () {-->
+            <#--group.favor($(this), "${basePath}")-->
+        <#--});-->
+    <#--});-->
 </script>
 </body>
 </html>

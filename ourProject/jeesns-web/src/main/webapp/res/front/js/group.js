@@ -18,12 +18,18 @@ var group = {
                     if (groupTopicComment != null){
                         html += "<pre><code><p>引用“<a href='"+base+"/u/"+groupTopicComment.member.id+"'>"+groupTopicComment.member.name+"</a>”的评论</p>"+groupTopicComment.content+"</code></pre>";
                     }
+                    var content="zzz";
+                    //var content=emoji.replace_colons(data[i].content);
+                    javascript:group.emoi(content);
                     html += data[i].content + "<div class='pull-right'><a href='javascript:group.commentReply("+data[i].id+")'>回复</a></div></div>" +
                         "<form class=\"form-horizontal jeesns_form\" action=\""+base+"/group/comment/"+groupTopicId+"\" method=\"post\" id='comment-form-"+data[i].id+"' style='display: none;'>" +
                         "<div class=\"form-group\"><input type='hidden' name='groupTopicCommentId' value='"+data[i].id+"'/>" +
                         "<textarea name=\"content\" class=\"form-control group-comment-content\" rows=\"2\" id=\""+data[i].id+"\"></textarea></div>" +
                         "<div class=\"form-group comment-user\">" +
                         "<input type=\"submit\" value=\"回复\" class=\"pull-right btn btn-primary mg-t-10 jeesns-submit\"></div></form></div></div>";
+                    //var content = $(this).html();
+                    //content = emoji.replace_colons(content);
+                    //$(this).html(content);
                 }
                 pageNo = json.page.pageNo;
                 if(json.page.totalPage<=pageNo){
@@ -62,5 +68,8 @@ var group = {
     commentReply: function (id) {
         $('#comment-form-'+id).toggle();
         $('#'+id).focus();
+    },
+    emoi:function (content) {
+        var content="jfdljfsf";
     }
 }

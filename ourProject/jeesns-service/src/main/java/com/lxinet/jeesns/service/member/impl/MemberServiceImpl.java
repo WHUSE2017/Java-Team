@@ -478,4 +478,5 @@ public class MemberServiceImpl implements IMemberService {
         return memberDao.updateScore(score,memberId) == 1;
     }
 
+
 }

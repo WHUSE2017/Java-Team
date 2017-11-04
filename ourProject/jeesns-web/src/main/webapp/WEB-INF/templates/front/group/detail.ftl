@@ -37,12 +37,15 @@
                                 <strong>${group.name}</strong>
                             </span>
                             <span class="text-right">
-                                <#if isfollow == true>
-                                    <a title="取消选课" href="${basePath}/group/nofollow/${group.id}"
-                                       target="_jeesnsLink"><i class="icon-minus"></i> 取消选课</a>
+                                <#if loginUser?? && loginUser.isAdmin &gt; 0>
                                 <#else>
-                                    <a title="添加选课" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink"><i
-                                            class="icon-plus"></i> 选课</a>
+                                    <#if isfollow == true>
+                                        <a title="取消选课" href="${basePath}/group/nofollow/${group.id}"
+                                           target="_jeesnsLink"><i class="icon-minus"></i> 取消选课</a>
+                                    <#else>
+                                        <a title="添加选课" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink"><i
+                                                class="icon-plus"></i> 选课</a>
+                                    </#if>
                                 </#if>
                                 <#if loginUser?? && loginUser.id == group.creator>
                                    . <a href="${basePath}/group/edit/${group.id}">编辑</a>
