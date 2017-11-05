@@ -112,9 +112,12 @@
                             </form>
                         </div>
                     </header>
-                    <section class="comments-list" id="commentList">
+                    <#list model.data as groupTopicComment>
+                    <div class="emoji-render-content">${groupTopicComment.content}</div>
+                    </#list>
+                    <#--<section class="comments-list" id="commentList">-->
 
-                    </section>
+                    <#--</section>-->
                     <button class="btn btn-primary btn-block m" id="moreComment" style="display: none"><i
                             class="fa fa-arrow-down"></i> 加载更多
                     </button>

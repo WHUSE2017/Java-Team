@@ -1,4 +1,5 @@
 var group = {
+    content:"zzz",
     commentList : function (groupTopicId,pageNo) {
         $.ajax({
             url : base+"/group/commentList/"+groupTopicId+".json?pageNo="+pageNo,
@@ -7,6 +8,7 @@ var group = {
             success : function (json) {
                 var data = json.data;
                 var html = "";
+
                 for(var i=0;i<data.length;i++){
                     html += "<div class=\"comment\">" +
                         "<a href=\""+base+"/u/"+data[i].member.id+"\" class=\"avatar\">" +
@@ -18,10 +20,9 @@ var group = {
                     if (groupTopicComment != null){
                         html += "<pre><code><p>引用“<a href='"+base+"/u/"+groupTopicComment.member.id+"'>"+groupTopicComment.member.name+"</a>”的评论</p>"+groupTopicComment.content+"</code></pre>";
                     }
-                    var content="zzz";
                     //var content=emoji.replace_colons(data[i].content);
-                    javascript:group.emoi(content);
-                    html += data[i].content + "<div class='pull-right'><a href='javascript:group.commentReply("+data[i].id+")'>回复</a></div></div>" +
+                    group.emoi(data[i].content);
+                    html += group.content + "<div class='pull-right'><a href='javascript:group.commentReply("+data[i].id+")'>回复</a></div></div>" +
                         "<form class=\"form-horizontal jeesns_form\" action=\""+base+"/group/comment/"+groupTopicId+"\" method=\"post\" id='comment-form-"+data[i].id+"' style='display: none;'>" +
                         "<div class=\"form-group\"><input type='hidden' name='groupTopicCommentId' value='"+data[i].id+"'/>" +
                         "<textarea name=\"content\" class=\"form-control group-comment-content\" rows=\"2\" id=\""+data[i].id+"\"></textarea></div>" +
@@ -70,6 +71,6 @@ var group = {
         $('#'+id).focus();
     },
     emoi:function (content) {
-        var content="jfdljfsf";
+        group.content=content;
     }
 }
