@@ -68,7 +68,7 @@
                                         <#if loginUser.id == groupTopic.memberId>
                                             <li><a href="${basePath}/group/topicEdit/${groupTopic.id}">编辑</a></li>
                                         </#if>
-                                        <li><a href="${basePath}/group/delete/${groupTopic.id}" confirm="确定要删除帖子吗？" target="_jeesnsLink">删除</a></li>
+                                        <li><a href="${basePath}/group/delete/${groupTopic.id}" confirm="确定要删除作业吗？" target="_jeesnsLink">删除</a></li>
                                     </ul>
                                 </div>
                             </#if>
@@ -112,12 +112,9 @@
                             </form>
                         </div>
                     </header>
-                    <#list model.data as groupTopicComment>
-                    <div class="emoji-render-content">${groupTopicComment.content}</div>
-                    </#list>
-                    <#--<section class="comments-list" id="commentList">-->
+                    <section class="comments-list" id="commentList">
 
-                    <#--</section>-->
+                    </section>
                     <button class="btn btn-primary btn-block m" id="moreComment" style="display: none"><i
                             class="fa fa-arrow-down"></i> 加载更多
                     </button>
@@ -151,9 +148,7 @@
                                 <#--<#if loginUser?? && loginUser.id == groupTopic.group.creator>-->
                                     <#--. <a href="${basePath}/group/edit/${groupTopic.group.id}">编辑</a>-->
                                 <#--</#if>-->
-                                <#--<#if isManager == 1>-->
-                                    <#--. <a href="${basePath}/group/auditList/${groupTopic.group.id}">审核帖子</a>-->
-                                <#--</#if>-->
+                              
                             <#--</span>-->
                         </p>
                     </div>

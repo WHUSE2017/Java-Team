@@ -13,7 +13,9 @@ public interface IGroupTopicService {
     GroupTopic findById(int id);
 
     GroupTopic findById(int id,Member loginMember);
-
+    
+    GroupTopic findGroupTopicById(int id);
+    
     ResponseModel save(Member member, GroupTopic groupTopic);
 
     ResponseModel update(Member member, GroupTopic groupTopic);

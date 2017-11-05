@@ -1,5 +1,6 @@
 package com.lxinet.jeesns.web.front;
 
+import com.lxinet.jeesns.common.utils.SendMail;
 import com.lxinet.jeesns.common.utils.MemberUtil;
 import com.lxinet.jeesns.interceptor.UserLoginInterceptor;
 import com.lxinet.jeesns.service.common.IArchiveService;
@@ -17,12 +18,15 @@ import com.lxinet.jeesns.service.group.IGroupTopicCommentService;
 import com.lxinet.jeesns.service.group.IGroupTopicService;
 import com.lxinet.jeesns.model.member.Member;
 import com.lxinet.jeesns.service.member.IMemberService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller("frontGroupController")
@@ -45,7 +49,8 @@ public class GroupController extends BaseController {
 
     @RequestMapping(value = "/{memberId}",method = RequestMethod.GET)
     public String index(@PathVariable("memberId") String memberId,String key,Model model) {
-        Page page = new Page(request);
+
+    	Page page = new Page(request);
         ResponseModel responseModel = groupService.listByPageByMemberId(1,page,key,memberId);
         model.addAttribute("model",responseModel);
         model.addAttribute("key",key);
@@ -172,7 +177,31 @@ public class GroupController extends BaseController {
         model.addAttribute("loginUser", loginMember);
         return jeesnsConfig.getFrontTemplate() + "/group/edit";
     }
-
+    public HashMap<String, String> session=new HashMap<>();
+    @RequestMapping(value = "/findperson",method = RequestMethod.GET)
+    public String findperson(Model model){
+    	if(session.containsKey("personName")){
+            Member member = memberService.findByName(session.get("personName"));
+            session.remove("personName");
+            if(member == null){
+                return jeesnsConfig.getFrontTemplate() + ErrorUtil.error(model,-1005, Const.INDEX_ERROR_FTL_PATH);
+            }
+            model.addAttribute("member",member);
+            Member loginMember = MemberUtil.getLoginMember(request);
+            model.addAttribute("loginMember", loginMember);
+    		String url=jeesnsConfig.getFrontTemplate() + "/u";
+    		return url;
+    	}
+    	return jeesnsConfig.getFrontTemplate() + "/group/findperson";
+    }
+    @RequestMapping(value = "/findpersonDetail",method = RequestMethod.POST)
+    @ResponseBody
+    public Object findpersonDetail(Model model,String personName){
+    	
+    	session.put("personName", personName);
+    	return new ResponseModel(1,"正在获取用户信息...");
+    
+    }
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
     public Object update(Group group){
@@ -335,6 +364,30 @@ public class GroupController extends BaseController {
         if(loginMember == null){
             return new ResponseModel(-1,"请先登录");
         }
+        
+        //GroupTopicId -> GroupId
+        GroupTopic groupTopic=groupTopicService.findGroupTopicById(groupTopicId);
+        int groupId=groupTopic.getGroupId();
+        
+        //GroupId -> Creator
+        Group  group =groupService.findById(groupId);
+        String groupName=group.getName();
+        int creator=group.getCreator();
+        
+        //Creator -> ContactEmail
+        Member member = memberService.findById(creator);
+        String contactEmail=member.getContactEmail();
+        
+        //发邮件
+        SendMail sendMail =new SendMail();
+        try{
+        	sendMail.sendEmail(contactEmail,
+            		"JavaTeam群组系统信息通知", 
+            		"[JavaTeam群组系统信息通知]您的课程群组【"+groupName+"】里有一条新评论，请注意查看。\r\n(注：系统自动通知邮件,请不要回复。)");
+        }catch(Exception e){
+        	System.out.println("邮件发送失败！");
+        }
+        
         return groupTopicCommentService.save(loginMember,content,groupTopicId,groupTopicCommentId);
     }
 

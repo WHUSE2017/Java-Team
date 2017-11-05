@@ -132,7 +132,13 @@
                                     </div>
                                 </a>
                             </#if>
-      
+                               <a href="${basePath}/group/findperson">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                            找人
+                                        </div>
+                                    </div>
+                                </a>
                
                             </div>
                         </div>

@@ -16,6 +16,8 @@ public interface IGroupTopicDao extends IBaseDao<GroupTopic> {
     int audit(@Param("id") Integer id);
 
     GroupTopic findById(@Param("id") Integer id,@Param("loginMemberId") Integer loginMemberId);
+    
+    GroupTopic findGroupTopicById(@Param("id") Integer id);
 
     /**
      * 置顶

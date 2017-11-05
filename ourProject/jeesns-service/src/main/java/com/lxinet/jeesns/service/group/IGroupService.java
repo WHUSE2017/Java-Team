@@ -20,6 +20,8 @@ public interface IGroupService {
 
     ResponseModel listByPage(int status, Page page, String key);
 
+    ResponseModel getPersonIdByName(String personName,Page page);
+    
     ResponseModel listByPageByMemberId(int status, Page page, String key,String memberId);
     
     ResponseModel follow(Member loginMember, Integer groupId,int type);
@@ -27,4 +29,5 @@ public interface IGroupService {
     ResponseModel changeStatus(int id);
 
     List<Group> listByCustom(int status, int num, String sort);
+
 }
