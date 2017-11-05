@@ -1,5 +1,6 @@
 package com.lxinet.jeesns.web.front;
 
+import com.lxinet.jeesns.common.utils.SendMail;
 import com.lxinet.jeesns.common.utils.MemberUtil;
 import com.lxinet.jeesns.interceptor.UserLoginInterceptor;
 import com.lxinet.jeesns.service.common.IArchiveService;
@@ -363,6 +364,30 @@ public class GroupController extends BaseController {
         if(loginMember == null){
             return new ResponseModel(-1,"请先登录");
         }
+        
+        //GroupTopicId -> GroupId
+        GroupTopic groupTopic=groupTopicService.findGroupTopicById(groupTopicId);
+        int groupId=groupTopic.getGroupId();
+        
+        //GroupId -> Creator
+        Group  group =groupService.findById(groupId);
+        String groupName=group.getName();
+        int creator=group.getCreator();
+        
+        //Creator -> ContactEmail
+        Member member = memberService.findById(creator);
+        String contactEmail=member.getContactEmail();
+        
+        //发邮件
+        SendMail sendMail =new SendMail();
+        try{
+        	sendMail.sendEmail(contactEmail,
+            		"JavaTeam群组系统信息通知", 
+            		"[JavaTeam群组系统信息通知]您的课程群组【"+groupName+"】里有一条新评论，请注意查看。\r\n(注：系统自动通知邮件,请不要回复。)");
+        }catch(Exception e){
+        	System.out.println("邮件发送失败！");
+        }
+        
         return groupTopicCommentService.save(loginMember,content,groupTopicId,groupTopicCommentId);
     }
 
