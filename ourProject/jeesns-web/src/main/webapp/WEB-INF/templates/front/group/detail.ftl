@@ -37,22 +37,23 @@
                                 <strong>${group.name}</strong>
                             </span>
                             <span class="text-right">
-                                <#if isfollow == true>
-                                    <a title="取消选课" href="${basePath}/group/nofollow/${group.id}"
-                                       target="_jeesnsLink"><i class="icon-minus"></i> 取消选课</a>
+                                <#if loginUser?? && loginUser.isAdmin &gt; 0>
                                 <#else>
-                                    <a title="添加选课" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink"><i
-                                            class="icon-plus"></i> 选课</a>
+                                    <#if isfollow == true>
+                                        <a title="取消选课" href="${basePath}/group/nofollow/${group.id}"
+                                           target="_jeesnsLink"><i class="icon-minus"></i> 取消选课</a>
+                                    <#else>
+                                        <a title="添加选课" href="${basePath}/group/follow/${group.id}" target="_jeesnsLink"><i
+                                                class="icon-plus"></i> 选课</a>
+                                    </#if>
                                 </#if>
                                 <#if loginUser?? && loginUser.id == group.creator>
                                    . <a href="${basePath}/group/edit/${group.id}">编辑</a>
                                 </#if>
-                                <#if isManager == 1>
-                                   . <a href="${basePath}/group/auditList/${group.id}">审核帖子</a>
-                                </#if>
+                              
                             </span>
                         </p>
-                        <p>${model.page.totalCount}帖子 · ${groupFansList?size}人已选</p>
+                        <p>${model.page.totalCount}次作业 · ${groupFansList?size-1}人已选</p>
                         <p><a href="${basePath}/u/${group.creatorMember.id}">${group.creatorMember.name}</a>
                             创建于${group.createTime?string("yyyy-MM-dd")}</p>
                     </div>
@@ -65,7 +66,11 @@
                     <div class="panel-heading">
                         全部
                         <span class="pull-right">
-                            <a class="btn btn-primary m-t-n4" href="${basePath}/group/post/${group.id}">发帖</a>
+                         <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a class="btn btn-primary m-t-n4" href="${basePath}/group/post/${group.id}">布置作业</a>
+                          
+                            </#if>
+                           
                         </span>
                     </div>
                     <div class="panel-body">
@@ -112,7 +117,7 @@
             <div class="col-md-4 float-left">
                 <div class="panel group-detail-fans">
                     <div class="panel-heading">
-                        学生(${groupFansList?size})
+                        学生(${groupFansList?size-1})
                     </div>
                     <div class="panel-body list">
                         <#list groupFansList as groupFans>

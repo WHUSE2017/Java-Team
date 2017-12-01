@@ -81,14 +81,23 @@
                         <div class="float-e-margins">
                             <div class="feed-activity-list">
                             
-                            
-                                <a href="${basePath}/u/${member.id}/home/fans">
+                              <#if loginUser?? && loginUser.isAdmin &gt; 0>
+                                <a href="${basePath}/group/apply">
                                     <div class="feed-element">
                                         <div class="media-body">
-                                            学生
+                                            开设课程
                                         </div>
                                     </div>
                                 </a>
+                                 <#else>
+                                 <a href="${basePath}/group/${loginUser.id}">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                           选课
+                                        </div>
+                                    </div>
+                                </a> 
+                                 </#if>
                                 <#--<a href="${basePath}/u/${member.id}/home/follows">-->
                                     <#--<div class="feed-element">-->
                                         <#--<div class="media-body">-->
@@ -121,7 +130,13 @@
                                     </div>
                                 </a>
                             </#if>
-                            
+                             <a href="${basePath}/group/findperson">
+                                    <div class="feed-element">
+                                        <div class="media-body">
+                                            找人
+                                        </div>
+                                    </div>
+                                </a>
                             
                             </div>
                         </div>
@@ -279,7 +294,7 @@
                                             <div class="media-body ">
                                                 <h4><strong><a href="${basePath}/group/detail/${groupFans.group.id}">${groupFans.group.name}</a></strong></h4>
                                                 <p>${groupFans.group.introduce}</p>
-                                                <small class="text-muted">${groupFans.group.topicCount}篇帖子 · ${groupFans.group.fansCount}人已选</small>
+                                                <small class="text-muted">${groupFans.group.topicCount}次作业 · ${groupFans.group.fansCount}人已选</small>
                                             </div>
                                         </div>
                                     </#list>

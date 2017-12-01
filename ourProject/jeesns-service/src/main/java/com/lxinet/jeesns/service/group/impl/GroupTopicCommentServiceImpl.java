@@ -10,6 +10,7 @@ import com.lxinet.jeesns.service.group.IGroupTopicCommentService;
 import com.lxinet.jeesns.dao.group.IGroupTopicCommentDao;
 import com.lxinet.jeesns.service.group.IGroupTopicService;
 import com.lxinet.jeesns.common.utils.ScoreRuleConsts;
+import com.lxinet.jeesns.service.member.IMemberService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -20,7 +21,8 @@ public class GroupTopicCommentServiceImpl implements IGroupTopicCommentService {
     private IGroupTopicCommentDao groupTopicCommentDao;
     @Resource
     private IGroupTopicService groupTopicService;
-
+    @Resource
+    private IMemberService memberService;
     @Override
     public GroupTopicComment findById(int id) {
         return groupTopicCommentDao.findById(id);

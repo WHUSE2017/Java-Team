@@ -39,6 +39,11 @@ public class GroupTopicServiceImpl implements IGroupTopicService {
     }
 
     @Override
+    public GroupTopic findGroupTopicById(int id) {
+        return groupTopicDao.findGroupTopicById(id);
+    }
+    
+    @Override
     public GroupTopic findById(int id,Member loginMember) {
         int loginMemberId = loginMember == null ? 0 : loginMember.getId();
         return groupTopicDao.findById(id,loginMemberId);

@@ -50,6 +50,13 @@ public class GroupServiceImpl implements IGroupService {
         return model;
     }
     @Override
+    public ResponseModel getPersonIdByName(String personName, Page page) {
+    	List<Group> list = null;
+        ResponseModel model = new ResponseModel(0,page);
+        model.setData(list);
+        return model;
+    }
+    @Override
     public ResponseModel listByPageByMemberId(int status, Page page, String key,String memberId) {
         if (StringUtils.isNotBlank(key)){
             key = "%"+key.trim()+"%";

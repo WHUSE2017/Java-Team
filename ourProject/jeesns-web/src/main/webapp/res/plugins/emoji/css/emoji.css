@@ -1,6 +1,6 @@
 .emoji-container{
   position: relative;
-  margin-left: 6px;
+  margin-left: 12px;
 }
 .emoji-container .emoji-tbtn{width: 20px; height: 20px; cursor: pointer;}
 .emoji-container .emoji-inner{
@@ -40,7 +40,7 @@
 }
 .emoji-container .emoji-content {
   height: 140px;
-  margin-left: 122px;
+  margin-left: 130px;
   overflow-y: auto;
 }
 .emoji-container .emoji-content > img{

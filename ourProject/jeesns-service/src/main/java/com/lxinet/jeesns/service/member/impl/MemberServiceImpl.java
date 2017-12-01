@@ -88,7 +88,7 @@ public class MemberServiceImpl implements IMemberService {
         member.setPassword(Md5Util.getMD5Code(member.getPassword()));
         member.setAvatar(Const.DEFAULT_AVATAR);
         if(memberDao.register(member) == 1){
-           return new ResponseModel(2,"注册成功,等待管理员审核",request.getServletContext().getContextPath()+"/member/login");
+           return new ResponseModel(2,"注册成功",request.getServletContext().getContextPath()+"/member/login");
         }
         return new ResponseModel(-1,"注册失败");
     }
@@ -477,5 +477,6 @@ public class MemberServiceImpl implements IMemberService {
     public boolean updateScore(Integer score, Integer memberId) {
         return memberDao.updateScore(score,memberId) == 1;
     }
+
 
 }

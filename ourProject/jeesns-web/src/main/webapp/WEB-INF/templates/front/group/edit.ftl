@@ -63,21 +63,27 @@
                             <textarea class="form-control" rows="3" name="introduce" alt="介绍">${group.introduce}</textarea>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">管理员</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="inputmanagers">输入会员昵称，每个管理员用空格结束，昵称不存在管理员不会添加
-                            <input type="hidden" class="form-control" id="managers" name="managers" value="${managerNames}"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
+                        <div class="form-group">
                         <label class="col-sm-2 control-label">标签</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="inputtags">每个标签用空格结束
                             <input type="hidden" class="form-control" id="tags" name="tags" value="${group.tags}"/>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="visibility:hidden">
+                        <label class="col-sm-2 control-label">管理员</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputmanagers">输入会员昵称，每个管理员用空格结束，昵称不存在管理员不会添加
+                            <input type="hidden" class="form-control" id="managers" name="managers" value="${managerNames}"/>
+                        </div>
+                    </div>
+                          <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <button type="submit" class="btn btn-info jeesns-submit">修改</button>
+                            <a class="btn btn-default" href="${basePath}/group/detail/${group.id}">返回</a>
+                        </div>
+                    </div>
+                    <div class="form-group" style="visibility:hidden">
                         <label class="col-sm-2 control-label">是否可以发帖</label>
                         <div class="col-sm-8">
                             <div class="radio radio-info radio-inline">
@@ -90,7 +96,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+            
+                    <div class="form-group" style="visibility:hidden">
                         <label class="col-sm-2 control-label">帖子是否需要审核</label>
                         <div class="col-sm-8">
                             <div class="radio radio-info radio-inline">
@@ -103,12 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-8">
-                            <button type="submit" class="btn btn-info jeesns-submit">修改</button>
-                            <a class="btn btn-default" href="${basePath}/group/detail/${group.id}">返回</a>
-                        </div>
-                    </div>
+                  
                 </form>
             </div>
         </div>

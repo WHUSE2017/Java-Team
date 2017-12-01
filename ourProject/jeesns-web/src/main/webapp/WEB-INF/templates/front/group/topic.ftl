@@ -10,6 +10,9 @@
     <meta name="author" content="JEESNS"/>
     <link href="${basePath}/res/common/css/zui.min.css" rel="stylesheet">
     <link href="${basePath}/res/front/css/app.css" rel="stylesheet">
+    <link href="${basePath}/res/plugins/emoji/css/emoji.css" rel="stylesheet">
+    <link href="${basePath}/res/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="${basePath}/res/plugins/gallery/css/blueimp-gallery.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="${basePath}/res/common/js/html5shiv.min.js"></script>
     <script src="${basePath}/res/common/js/respond.min.js"></script>
@@ -19,6 +22,10 @@
     <script src="${basePath}/res/plugins/layer/layer.js"></script>
     <script src="${basePath}/res/common/js/jquery.form.js"></script>
     <script src="${basePath}/res/front/js/jeesns.js"></script>
+    <script src="${basePath}/res/plugins/emoji/js/underscore-min.js"></script>
+    <script src="${basePath}/res/plugins/emoji/js/editor.js"></script>
+    <script src="${basePath}/res/plugins/emoji/js/emojis.js"></script>
+    <script src="${basePath}/res/plugins/js-emoji/emoji.js"></script>
     <script>
         var base = "${basePath}";
         var groupTopicId = ${groupTopic.id};
@@ -55,29 +62,13 @@
                                     <button class="btn" type="button" data-toggle="dropdown">操作 <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
 
-                                        <#if loginUser?? && loginUser.isAdmin &gt; 0>
-                                            <#if groupTopic.isTop = 0>
-                                                <li><a href="${base}/group/topic/top/${groupTopic.id}?top=1" target="_jeesnsLink">普通置顶</a></li>
-                                                <li><a href="${base}/group/topic/top/${groupTopic.id}?top=2" target="_jeesnsLink">超级置顶</a></li>
-                                            <#elseif groupTopic.isTop = 1>
-                                                <li><a href="${base}/group/topic/top/${groupTopic.id}?top=0" target="_jeesnsLink">取消普通置顶</a></li>
-                                                <li><a href="${base}/group/topic/top/${groupTopic.id}?top=2" target="_jeesnsLink">超级置顶</a></li>
-                                            <#elseif groupTopic.isTop = 2>
-                                                <li><a href="${base}/group/topic/top/${groupTopic.id}?top=0" target="_jeesnsLink">取消超级置顶</a></li>
-                                                <li><a href="${base}/group/topic/top/${groupTopic.id}?top=1" target="_jeesnsLink">普通置顶</a></li>
-                                            </#if>
-                                            <#if groupTopic.isEssence = 0>
-                                                <li><a href="${base}/group/topic/essence/${groupTopic.id}?essence=1" target="_jeesnsLink">精华</a></li>
-                                            <#elseif groupTopic.isEssence = 1>
-                                                <li><a href="${base}/group/topic/essence/${groupTopic.id}?essence=0" target="_jeesnsLink">取消精华</a></li>
-                                            </#if>
-                                        </#if>
+                         
 
 
                                         <#if loginUser.id == groupTopic.memberId>
                                             <li><a href="${basePath}/group/topicEdit/${groupTopic.id}">编辑</a></li>
                                         </#if>
-                                        <li><a href="${basePath}/group/delete/${groupTopic.id}" confirm="确定要删除帖子吗？" target="_jeesnsLink">删除</a></li>
+                                        <li><a href="${basePath}/group/delete/${groupTopic.id}" confirm="确定要删除作业吗？" target="_jeesnsLink">删除</a></li>
                                     </ul>
                                 </div>
                             </#if>
@@ -108,7 +99,12 @@
                             <form class="form-horizontal jeesns_form"
                                   action="${basePath}/group/comment/${groupTopic.id}" method="post">
                                 <div class="form-group">
-                                    <textarea name="content" class="form-control new-comment-text" rows="2" placeholder="撰写评论..."></textarea>
+                                    <textarea name="content" class="form-control new-comment-text" id="group-content" rows="2" placeholder="撰写评论..."></textarea>
+                                </div>
+                                <div class="row emoji-container" id="emoji">
+                                    <a href="javascript:void(0)" >
+                                        <i class="icon-smile emoji-tbtn"></i>
+                                    </a>
                                 </div>
                                 <div class="form-group comment-user">
                                     <input type="submit" value="评论" class="pull-right btn btn-primary mg-t-10 jeesns-submit">
@@ -152,9 +148,7 @@
                                 <#--<#if loginUser?? && loginUser.id == groupTopic.group.creator>-->
                                     <#--. <a href="${basePath}/group/edit/${groupTopic.group.id}">编辑</a>-->
                                 <#--</#if>-->
-                                <#--<#if isManager == 1>-->
-                                    <#--. <a href="${basePath}/group/auditList/${groupTopic.group.id}">审核帖子</a>-->
-                                <#--</#if>-->
+                              
                             <#--</span>-->
                         </p>
                     </div>
@@ -195,8 +189,14 @@
 
 </div>
 <#include "/${frontTemplate}/common/footer.ftl"/>
-<script>
-    $(document).ready(function () {
+<script type="text/javascript">
+    $(function () {
+
+        $('#emoji').emoji({
+            insertAfter: function (item) {
+                $('#group-content').insertContent(':' + item.name + ':')
+            }
+        }, "${basePath}");
         var pageNo = 1;
         group.commentList(groupTopicId, pageNo);
         $("#moreComment").click(function () {
@@ -207,6 +207,17 @@
             group.favor($(this), "${basePath}")
         });
     });
+    <#--$(document).ready(function () {-->
+        <#--var pageNo = 1;-->
+        <#--group.commentList(groupTopicId, pageNo);-->
+        <#--$("#moreComment").click(function () {-->
+            <#--pageNo++;-->
+            <#--group.commentList(articleId, pageNo);-->
+        <#--});-->
+        <#--$(".topic-favor").click(function () {-->
+            <#--group.favor($(this), "${basePath}")-->
+        <#--});-->
+    <#--});-->
 </script>
 </body>
 </html>

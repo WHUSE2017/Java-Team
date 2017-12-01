@@ -7,11 +7,14 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
+
 import com.lxinet.jeesns.core.utils.Const;
+
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -27,6 +30,7 @@ public class CkeditorUploadController extends BaseController {
      * @param upload
      */
     @RequestMapping(value = "/uploadImage")
+    @ResponseBody
     public void uploadImage(@RequestParam MultipartFile[] upload) {
         String callback = request.getParameter("CKEditorFuncNum");
         PrintWriter out = null;
@@ -53,7 +57,7 @@ public class CkeditorUploadController extends BaseController {
 
             fileName = file.getOriginalFilename();
             suffix = fileName.substring(fileName.lastIndexOf("."), fileName.length()).toLowerCase();
-            String[] imageExtensionNameArray = {".jpg", ".jpeg", ".png", ".gif", ".bmp"};
+            String[] imageExtensionNameArray = {".jpg", ".jpeg", ".png", ".gif", ".bmp",".txt",".ppt",".pptx",".xlsx",".xls",".docx",".doc",".zip",".rar",".pdf"};
             String allImageExtensionName = "";
             boolean isContain = false;//默认不包含上传图片文件扩展名
             for (int i = 0; i < imageExtensionNameArray.length; i++) {
@@ -87,7 +91,7 @@ public class CkeditorUploadController extends BaseController {
                     out.close();
                 }
                 String imageUrl = path + newFileName;
-                out.print("<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction(" + callback + ",'"+imageUrl+"'," + "'');</script>");
+                out.print("<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction(" + callback + ",'"+"/jeesns-web"+imageUrl+"'," + "'');</script>");
                 out.flush();
                 out.close();
 
